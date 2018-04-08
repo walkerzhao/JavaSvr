@@ -13,7 +13,7 @@ public abstract class IoPacketEncoder<T_MSG extends IoPacket> extends MessageToB
 	}
 
 	protected boolean isUdp = false;
-	public com.tencent.jungle.svrcore.IoPacketEncoder<T_MSG> setUdp(boolean isUdp) {
+	public com.tencent.jungle.svrcore.packet.IoPacketEncoder<T_MSG> setUdp(boolean isUdp) {
 		this.isUdp = isUdp;
 		return this;
 	}

@@ -12,7 +12,7 @@ public abstract class IoPacketDecoder extends ByteToMessageDecoder {
 	}
 	
 	protected boolean isUdp = false;
-	public com.tencent.jungle.svrcore.IoPacketDecoder setUdp(boolean isUdp) {
+	public com.tencent.jungle.svrcore.packet.IoPacketDecoder setUdp(boolean isUdp) {
 		this.isUdp = isUdp;
 		return this;
 	}

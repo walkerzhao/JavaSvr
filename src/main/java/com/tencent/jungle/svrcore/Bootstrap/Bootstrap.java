@@ -13,7 +13,7 @@ public class Bootstrap {
         System.out.println("hello,world");
         //加载配置
         PropertiesConfiguration tmp = new PropertiesConfiguration();
-        File cFile = new File("../conf/jungle.properties");
+        File cFile = new File("jungle.properties");
         if (cFile.exists() && cFile.isFile()){
             try {
                 tmp.load(cFile);
@@ -21,6 +21,9 @@ public class Bootstrap {
                 throw new RuntimeException(e);
             }
         }
+
+        String value = tmp.getString("jungle.test");
+        System.out.println(value);
 
         // workService --> 目前使用ThreadPoolWorkerService
         //后续引入kilim的线程池
