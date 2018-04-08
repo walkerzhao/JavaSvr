@@ -1,4 +1,4 @@
-package com.tencent.jungle;
+package com.tencent.jungle.svrcore;
 
 /**
  * Hello world!
