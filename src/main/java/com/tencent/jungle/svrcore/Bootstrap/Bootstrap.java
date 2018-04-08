@@ -13,7 +13,7 @@ public class Bootstrap {
         System.out.println("hello,world");
         //加载配置
         PropertiesConfiguration tmp = new PropertiesConfiguration();
-        File cFile = new File("jungle.properties");
+        File cFile = new File(Bootstrap.class.getClassLoader().getResource("jungle.properties").getFile());
         if (cFile.exists() && cFile.isFile()){
             try {
                 tmp.load(cFile);
