@@ -1,6 +1,6 @@
 package com.tencent.jungle.svrcore.Bootstrap;
 
-import com.tencent.jungle.svrcore.WorkerService;
+import com.tencent.jungle.svrcore.ws.WorkerService;
 import com.tencent.jungle.svrcore.client.DefaultTimeoutManager;
 import com.tencent.jungle.svrcore.client.TimeoutManager;
 import com.tencent.jungle.svrcore.ws.ThreadPoolWorkerService;
