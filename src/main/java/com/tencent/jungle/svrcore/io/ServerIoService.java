@@ -2,16 +2,13 @@ package com.tencent.jungle.svrcore.io;
 
 import java.net.SocketAddress;
 
-import com.tencent.jungle.svrcore.CodecService;
+import com.tencent.jungle.svrcore.packet.CodecService;
 import com.tencent.jungle.svrcore.ps.ProcessorService;
 import com.tencent.jungle.svrcore.ws.WorkerService;
-import com.tencent.jungle.svrcore.io.TcpServerIoService;
-import com.tencent.jungle.svrcore.io.UdpServerIoService;
+
 
 /**
  * 管理链接资源，进行IO操作。
- * @see TcpServerIoService
- * @see UdpServerIoService
  */
 public interface ServerIoService {
     void start();
@@ -35,20 +32,20 @@ public interface ServerIoService {
      * @param codec
      * @return
      */
-    com.tencent.jungle.svrcore.ServerIoService setCodecService(CodecService codec);
+    ServerIoService setCodecService(CodecService codec);
 
     /**
      * 工作线程池
      * @param worker
      * @return
      */
-    com.tencent.jungle.svrcore.ServerIoService setWorkerService(WorkerService worker);
+    ServerIoService setWorkerService(WorkerService worker);
 
     /**
      * 上行包处理服务
      * @param mapper
      * @return
      */
-    com.tencent.jungle.svrcore.ServerIoService setProcessorService(ProcessorService mapper);
+    ServerIoService setProcessorService(ProcessorService mapper);
 }
 

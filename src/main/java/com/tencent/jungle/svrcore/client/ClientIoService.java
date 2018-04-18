@@ -4,7 +4,6 @@ import com.tencent.jungle.svrcore.CodecService;
 import com.tencent.jungle.svrcore.packet.IoPacket;
 import com.tencent.jungle.svrcore.ws.WorkerService;
 import com.tencent.jungle.svrcore.qapp.QAppClientCodecService;
-import com.tencent.jungle.svrcore.wns.WnsClientCodecService;
 import java.util.concurrent.Future;
 
 /**
@@ -18,7 +17,6 @@ public interface ClientIoService<T_REQ extends IoPacket, T_RSP extends IoPacket>
 	
 	/**
 	 * 注意传server CodecService会导致协议异常
-	 * @param codec {@link WnsClientCodecService} {@link QAppClientCodecService}
 	 * @return
 	 */
 	ClientIoService<T_REQ, T_RSP> setCodecService(CodecService codec);

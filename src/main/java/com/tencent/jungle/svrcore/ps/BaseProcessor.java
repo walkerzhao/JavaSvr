@@ -5,12 +5,10 @@ import com.tencent.jungle.api.APIException;
 import com.tencent.jungle.svrcore.packet.IoPacket;
 import com.tencent.jungle.svrcore.ps.Processor;
 import com.tencent.jungle.svrcore.comm.ServerConfigs;
-import com.tencent.jungle.svrcore.smart.SmartReporter;
 import com.tencent.jungle.svrcore.utils.BusinessException;
 import com.tencent.jungle.svrcore.utils.MonitorBlackUidUtil;
 import com.tencent.jungle.svrcore.utils.MonitorUtils;
 import com.tencent.jungle.svrcore.utils.U;
-import com.tencent.jungle.svrcore.ws.ExtremeWorkerService;
 import com.tencent.jungle.svrcore.ws.ServerWriteFutureListener;
 import io.netty.channel.Channel;
 import org.apache.commons.configuration.Configuration;
@@ -34,7 +32,6 @@ public abstract class BaseProcessor<T_REQ extends IoPacket, T_RSP extends IoPack
 	protected final ServerConfigs serverConfigs;
 	protected final Configuration configs;
 	protected final MonitorBlackUidUtil blackUidUtil;
-	protected final SmartReporter smartReporter;
 
 	
 	protected final int monitorAllReq;
@@ -113,7 +110,6 @@ public abstract class BaseProcessor<T_REQ extends IoPacket, T_RSP extends IoPack
 		
 		this.configs = injector.getInstance(Configuration.class);
 		this.blackUidUtil = injector.getInstance(MonitorBlackUidUtil.class);
-		this.smartReporter = injector.getInstance(SmartReporter.class);
 		
 		this.monitorAllReq = configs.getInt("monitor.req", 0);
 		this.monitorAllSucc = configs.getInt("monitor.succ", 0);
@@ -215,7 +211,7 @@ public abstract class BaseProcessor<T_REQ extends IoPacket, T_RSP extends IoPack
 			}
 			//智能监控上报
 			try{
-				smartReporter.send(String.valueOf(req.getIoCmd()), ((Number)rsp.getRetCode()).intValue(), costTime, rsp.getErrorMsg());
+//				smartReporter.send(String.valueOf(req.getIoCmd()), ((Number)rsp.getRetCode()).intValue(), costTime, rsp.getErrorMsg());
 			}catch(Exception e){
 				logger.error("smartReporter error",e);
 			}
@@ -250,7 +246,6 @@ public abstract class BaseProcessor<T_REQ extends IoPacket, T_RSP extends IoPack
 	
     /**
      * 异步回包模式下的util方法
-     * @see ExtremeWorkerService
      */
     public void asyncResponse(Channel ch, IoPacket rsp) {
         if (ch == null || !ch.isActive() || rsp == null) {
