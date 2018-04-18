@@ -1,8 +1,8 @@
 package com.tencent.jungle.svrcore.client;
 
 import com.tencent.jungle.svrcore.CodecService;
-import com.tencent.jungle.svrcore.IoPacket;
-import com.tencent.jungle.svrcore.WorkerService;
+import com.tencent.jungle.svrcore.packet.IoPacket;
+import com.tencent.jungle.svrcore.ws.WorkerService;
 import com.tencent.jungle.svrcore.client.RouterService.RouterInfo;
 import com.tencent.jungle.svrcore.comm.ChannelAttachment;
 import com.tencent.jungle.svrcore.ps.ClientIoProcessorService;
@@ -11,7 +11,6 @@ import com.tencent.jungle.svrcore.utils.MonitorUtils;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
 import io.netty.channel.ChannelHandler.Sharable;
-import kilim.Pausable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.concurrent.*;
@@ -161,20 +160,20 @@ public abstract class BaseClientIoService<T_REQ extends IoPacket, T_RSP extends 
 	}
 
 	@Override
-	public T_RSP sync(T_REQ req, long timeout) throws Pausable, Exception {
+	public T_RSP sync(T_REQ req, long timeout) throws  Exception {
 		final CountDownLatch latch = new CountDownLatch(1);
 		final Object[] result = new Object[1];
 		IoCallBack<T_REQ, T_RSP> callback = new IoCallBack<T_REQ, T_RSP>() {
 			
 			@Override
-			public void exceptionCaught(Channel ch, IoPacket req, Throwable ex)throws Pausable {
+			public void exceptionCaught(Channel ch, IoPacket req, Throwable ex){
 				result[0] = ex;
 				latch.countDown();
 			}
 			
 			@Override
 			public void callback(Channel ch, IoPacket req, IoPacket resp)
-					throws Pausable, Exception {
+					throws  Exception {
 				result[0] = resp;
 				latch.countDown();
 			}
@@ -214,7 +213,7 @@ public abstract class BaseClientIoService<T_REQ extends IoPacket, T_RSP extends 
 
 		@Override
 		public void callback(Channel ch, IoPacket req, IoPacket resp)
-				throws Pausable, Exception {
+				throws  Exception {
 			if (latch.getCount() == 0)
 				return;
 			this.result = resp;
@@ -222,7 +221,7 @@ public abstract class BaseClientIoService<T_REQ extends IoPacket, T_RSP extends 
 		}
 
 		@Override
-		public void exceptionCaught(Channel ch, IoPacket req, Throwable ex)throws Pausable {
+		public void exceptionCaught(Channel ch, IoPacket req, Throwable ex) {
 			if (latch.getCount() == 0)
 				return;
 			this.result = ex;

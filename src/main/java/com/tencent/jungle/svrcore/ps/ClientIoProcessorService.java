@@ -1,8 +1,8 @@
 package com.tencent.jungle.svrcore.ps;
 
-import com.tencent.jungle.svrcore.IoPacket;
-import com.tencent.jungle.svrcore.Processor;
-import com.tencent.jungle.svrcore.ProcessorService;
+import com.tencent.jungle.svrcore.packet.IoPacket;
+import com.tencent.jungle.svrcore.ps.Processor;
+import com.tencent.jungle.svrcore.ps.ProcessorService;
 import com.tencent.jungle.svrcore.client.PacketLikeLookupItem;
 import io.netty.channel.Channel;
 import kilim.Pausable;
@@ -26,7 +26,7 @@ public class ClientIoProcessorService implements ProcessorService {
 		
 		@Override
 		public IoPacket process(IoPacket resp, Channel ioChannel)
-				throws Pausable, Exception {
+				throws  Exception {
 			PacketLikeLookupItem<IoPacket, IoPacket> item = (PacketLikeLookupItem<IoPacket, IoPacket>)resp;
 			
 			if (item.result instanceof IoPacket){
@@ -42,7 +42,7 @@ public class ClientIoProcessorService implements ProcessorService {
 		}
 		
 		static void onExecptionCaught(Channel ioChannel, PacketLikeLookupItem<IoPacket, IoPacket> item, 
-				Exception e) throws Pausable{
+				Exception e) {
 			try{
 				item.callback.exceptionCaught(ioChannel, item.req, e);
 			}

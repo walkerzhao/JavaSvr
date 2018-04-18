@@ -2,7 +2,7 @@ package com.tencent.jungle.svrcore.io;
 
 import com.google.inject.Injector;
 import com.tencent.jungle.svrcore.*;
-import com.tencent.jungle.svrcore.ServerIoService;
+import com.tencent.jungle.svrcore.io.ServerIoService;
 import com.tencent.jungle.svrcore.comm.RunMode;
 import com.tencent.jungle.svrcore.utils.MonitorUtils;
 import com.tencent.jungle.svrcore.utils.NicUtil;

@@ -1,8 +1,6 @@
 package com.tencent.jungle.svrcore.client;
 
-import com.tencent.jungle.lb2.L5API;
-import com.tencent.jungle.lb2.L5API.L5QOSPacket;
-import com.tencent.jungle.svrcore.IoPacket;
+import com.tencent.jungle.svrcore.packet.IoPacket;
 import org.apache.commons.configuration.Configuration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -62,11 +60,11 @@ public class PropertiesL5RouterService implements RouterService {
 		if (isTestMode && c.testRouterInfo!=null)
 			ls.add(c.testRouterInfo);
 		else{
-			L5QOSPacket p = new L5QOSPacket(c.modid, c.cmdid);
-			p = L5API.getRouteTable(p);
-			long now = System.currentTimeMillis();
-			for (int i=0;i<p.hosts.length;i++)
-				ls.add(new RouterInfo(now, p.hosts[i], p.ports[i], p));
+//			L5QOSPacket p = new L5QOSPacket(c.modid, c.cmdid);
+//			p = L5API.getRouteTable(p);
+//			long now = System.currentTimeMillis();
+//			for (int i=0;i<p.hosts.length;i++)
+//				ls.add(new RouterInfo(now, p.hosts[i], p.ports[i], p));
 		}
 		return ls;
 	}
@@ -81,10 +79,10 @@ public class PropertiesL5RouterService implements RouterService {
 			if (routeInfo[0].contains(".")) {//ip:port
 				return new RouterInfo(0, routeInfo[0], Integer.parseInt(routeInfo[1].trim()), null);
 			} else {
-				L5QOSPacket p = new L5QOSPacket(Integer.valueOf(routeInfo[0]), Integer.valueOf(routeInfo[1]));
-				p = L5API.getRoute(p, 0.1F);
-				long now = System.currentTimeMillis();
-				return new RouterInfo(now, p.ip, p.port, p);
+//				L5QOSPacket p = new L5QOSPacket(Integer.valueOf(routeInfo[0]), Integer.valueOf(routeInfo[1]));
+//				p = L5API.getRoute(p, 0.1F);
+//				long now = System.currentTimeMillis();
+//				return new RouterInfo(now, p.ip, p.port, p);
 			}
 		} else {
 			L5Config c = data.get((String)routerId);
@@ -93,18 +91,21 @@ public class PropertiesL5RouterService implements RouterService {
 			if (isTestMode && c.testRouterInfo!=null)
 				return c.testRouterInfo;
 			else{
-				L5QOSPacket p = new L5QOSPacket(c.modid, c.cmdid);
-				p = L5API.getRoute(p, 0.1F);
-				long now = System.currentTimeMillis();
-				return new RouterInfo(now, p.ip, p.port, p);
+//				L5QOSPacket p = new L5QOSPacket(c.modid, c.cmdid);
+//				p = L5API.getRoute(p, 0.1F);
+//				long now = System.currentTimeMillis();
+//				return new RouterInfo(now, p.ip, p.port, p);
+				return null;
 			}
 		}
+		return null;
 	}
 
 	@Override
 	public void update(RouterInfo info, boolean succ) {
-		if (info != null && info.attach != null)
-			L5API.updateRoute((L5QOSPacket)info.attach, succ ? 1 : -1);
+		if (info != null && info.attach != null) {
+//			L5API.updateRoute((L5QOSPacket)info.attach, succ ? 1 : -1);
+		}
 	}
 
 	static class L5Config{

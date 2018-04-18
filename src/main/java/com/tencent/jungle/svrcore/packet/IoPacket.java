@@ -1,17 +1,13 @@
 package com.tencent.jungle.svrcore.packet;
 
-import com.tencent.jungle.svrcore.ProcessorService;
+import com.tencent.jungle.svrcore.ps.ProcessorService;
 import com.tencent.jungle.svrcore.client.RouterService;
 import com.tencent.jungle.svrcore.qapp.QAppReqPacket;
-import com.tencent.jungle.svrcore.sso.MsfPackage;
-import com.tencent.jungle.svrcore.wns.WnsUpPackage;
 import java.net.InetSocketAddress;
 
 /**
  * 网络上/下行包
  * @see QAppReqPacket
- * @see WnsUpPackage
- * @see MsfPackage
  */
 public interface IoPacket {
 	/**
@@ -38,7 +34,7 @@ public interface IoPacket {
 	 * @param body
 	 * @return
 	 */
-	com.tencent.jungle.svrcore.IoPacket newResponsePacket(com.tencent.jungle.svrcore.IoPacket reqPacket, int ec, String message, Object body);
+	IoPacket newResponsePacket(IoPacket reqPacket, int ec, String message, Object body);
 
 	/**
 	 * 协议包路由规则。一般用于上行包。{@link RouterService}

@@ -1,6 +1,6 @@
 package com.tencent.jungle.svrcore.qapp;
 
-import com.tencent.jungle.svrcore.IoPacketEncoder;
+import com.tencent.jungle.svrcore.packet.IoPacketEncoder;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandler.Sharable;

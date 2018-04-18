@@ -3,8 +3,8 @@ package com.tencent.jungle.svrcore.io;
 import java.net.SocketAddress;
 
 import com.tencent.jungle.svrcore.CodecService;
-import com.tencent.jungle.svrcore.ProcessorService;
-import com.tencent.jungle.svrcore.WorkerService;
+import com.tencent.jungle.svrcore.ps.ProcessorService;
+import com.tencent.jungle.svrcore.ws.WorkerService;
 import com.tencent.jungle.svrcore.io.TcpServerIoService;
 import com.tencent.jungle.svrcore.io.UdpServerIoService;
 
@@ -22,13 +22,13 @@ public interface ServerIoService {
      * @param port
      * @return
      */
-    com.tencent.jungle.svrcore.ServerIoService setBindNic(String nic, int port);
+    ServerIoService setBindNic(String nic, int port);
     /**
      * 绑定地址。本方法与{@link com.tencent.jungle.svrcore.ServerIoService#setBindNic}只需调任意一个
      * @param addr
      * @return
      */
-    com.tencent.jungle.svrcore.ServerIoService setBindAddr(SocketAddress addr);
+    ServerIoService setBindAddr(SocketAddress addr);
 
     /**
      * 编解码器服务

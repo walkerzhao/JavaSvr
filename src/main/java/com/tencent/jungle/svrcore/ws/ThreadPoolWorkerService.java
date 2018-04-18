@@ -2,16 +2,14 @@ package com.tencent.jungle.svrcore.ws;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import com.tencent.jungle.svrcore.IoPacket;
-import com.tencent.jungle.svrcore.Processor;
+import com.tencent.jungle.svrcore.packet.IoPacket;
+import com.tencent.jungle.svrcore.ps.Processor;
 import com.tencent.jungle.svrcore.UserTask;
-import com.tencent.jungle.svrcore.WorkerService;
+import com.tencent.jungle.svrcore.ws.WorkerService;
 import com.tencent.jungle.svrcore.comm.IoPacketValve;
 import com.tencent.jungle.svrcore.utils.EC;
 import com.tencent.jungle.svrcore.utils.MonitorUtils;
 import io.netty.channel.Channel;
-import kilim.NotPausable;
-import kilim.Pausable;
 import org.apache.commons.configuration.Configuration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -71,10 +69,10 @@ public class ThreadPoolWorkerService implements WorkerService {
 		tasks.execute(new Runnable() {
 			
 			@Override
-			public void run() throws NotPausable {
+			public void run() {
 				try {
 					task.runTask();
-				} catch (Pausable e) {
+				} catch (Exception e) {
 					log.error("should not reach", e);
 				}
 			}
@@ -97,7 +95,7 @@ class TPWS_Runnable0 implements Runnable {
 	}
 	
 	@Override
-	public void run() throws NotPausable{
+	public void run() {
 		IoPacket rsp =null;
 		Throwable throwable=null;
 		try{

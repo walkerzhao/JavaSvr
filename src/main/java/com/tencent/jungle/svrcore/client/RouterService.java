@@ -1,6 +1,6 @@
 package com.tencent.jungle.svrcore.client;
 
-import com.tencent.jungle.svrcore.IoPacket;
+import com.tencent.jungle.svrcore.packet.IoPacket;
 
 import java.net.InetSocketAddress;
 import java.util.List;

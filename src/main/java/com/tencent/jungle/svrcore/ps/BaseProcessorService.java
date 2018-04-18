@@ -1,8 +1,8 @@
 package com.tencent.jungle.svrcore.ps;
 
-import com.tencent.jungle.svrcore.IoPacket;
-import com.tencent.jungle.svrcore.Processor;
-import com.tencent.jungle.svrcore.ProcessorService;
+import com.tencent.jungle.svrcore.packet.IoPacket;
+import com.tencent.jungle.svrcore.ps.Processor;
+import com.tencent.jungle.svrcore.ps.ProcessorService;
 import io.netty.channel.Channel;
 
 import java.util.HashMap;

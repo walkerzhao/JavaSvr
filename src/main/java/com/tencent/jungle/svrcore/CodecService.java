@@ -1,6 +1,8 @@
-package com.tencent.jungle.svrcore.packet;
+package com.tencent.jungle.svrcore;
 
-
+import com.tencent.jungle.svrcore.packet.IoPacket;
+import com.tencent.jungle.svrcore.packet.IoPacketDecoder;
+import com.tencent.jungle.svrcore.packet.IoPacketEncoder;
 import com.tencent.jungle.svrcore.qapp.QAppServerCodecService;
 import io.netty.channel.Channel;
 

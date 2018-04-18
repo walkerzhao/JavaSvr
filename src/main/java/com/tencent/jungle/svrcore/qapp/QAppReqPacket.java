@@ -1,6 +1,6 @@
 package com.tencent.jungle.svrcore.qapp;
 
-import com.tencent.jungle.svrcore.IoPacket;
+import com.tencent.jungle.svrcore.packet.IoPacket;
 import com.tencent.jungle.svrcore.comm.BaseIoPacket;
 import com.tencent.jungle.svrcore.utils.U;
 

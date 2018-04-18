@@ -1,6 +1,6 @@
 package com.tencent.jungle.svrcore.qapp;
 
-import com.tencent.jungle.svrcore.IoPacketDecoder;
+import com.tencent.jungle.svrcore.packet.IoPacketDecoder;
 import com.tencent.jungle.svrcore.utils.MonitorUtils;
 import io.netty.buffer.ByteBuf;
 import org.slf4j.Logger;

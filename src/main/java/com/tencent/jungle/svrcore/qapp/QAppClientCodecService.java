@@ -1,8 +1,8 @@
 package com.tencent.jungle.svrcore.qapp;
 
 import com.tencent.jungle.svrcore.CodecService;
-import com.tencent.jungle.svrcore.IoPacketDecoder;
-import com.tencent.jungle.svrcore.IoPacketEncoder;
+import com.tencent.jungle.svrcore.packet.IoPacketDecoder;
+import com.tencent.jungle.svrcore.packet.IoPacketEncoder;
 import io.netty.channel.Channel;
 
 public class QAppClientCodecService implements CodecService<QAppReqPacket> {

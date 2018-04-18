@@ -1,6 +1,6 @@
 package com.tencent.jungle.svrcore.packet;
 
-import com.tencent.jungle.svrcore.IoPacket;
+import com.tencent.jungle.svrcore.packet.IoPacket;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToByteEncoder;

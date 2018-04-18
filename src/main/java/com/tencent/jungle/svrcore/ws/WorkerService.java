@@ -1,7 +1,7 @@
 package com.tencent.jungle.svrcore.ws;
 
-import com.tencent.jungle.svrcore.IoPacket;
-import com.tencent.jungle.svrcore.Processor;
+import com.tencent.jungle.svrcore.packet.IoPacket;
+import com.tencent.jungle.svrcore.ps.Processor;
 import com.tencent.jungle.svrcore.UserTask;
 import io.netty.channel.Channel;
 

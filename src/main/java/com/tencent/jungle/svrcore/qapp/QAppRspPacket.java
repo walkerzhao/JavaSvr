@@ -2,8 +2,9 @@ package com.tencent.jungle.svrcore.qapp;
 
 import com.google.protobuf.ByteString;
 import com.tencent.jungle.svrcore.comm.BaseIoPacket;
+import com.tencent.jungle.svrcore.packet.IoPacket;
 
-public class QAppRspPacket extends BaseIoPacket {
+public class QAppRspPacket extends BaseIoPacket implements IoPacket {
 	QAppMsg.QAppResponse r;
 	
 	public QAppRspPacket(QAppMsg.QAppResponse r) {
