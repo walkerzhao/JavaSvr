@@ -5,7 +5,6 @@ import com.tencent.jungle.svrcore.ps.Processor;
 import com.tencent.jungle.svrcore.ps.ProcessorService;
 import com.tencent.jungle.svrcore.client.PacketLikeLookupItem;
 import io.netty.channel.Channel;
-import kilim.Pausable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

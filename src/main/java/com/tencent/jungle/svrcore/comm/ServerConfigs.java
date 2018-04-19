@@ -41,9 +41,11 @@ public class ServerConfigs {
 			log.error("load WorkerService from guice failed, binding WorkerService.class to an instance is recommended. " +
 					"using a new ThreadPoolWorkerService", ex);
 		}
-		this.qapp = new KilimClientIoService<QAppReqPacket, QAppRspPacket>(
-				new TcpClientIoService<QAppReqPacket, QAppRspPacket>()
-						.setChannelsPerAddr(configs.getInt("server.client.tcp.channels", 2)));
+		this.qapp = new TcpClientIoService<QAppReqPacket, QAppRspPacket>()
+				.setChannelsPerAddr(configs.getInt("server.client.tcp.channels", 2));
+//		this.qapp = new KilimClientIoService<QAppReqPacket, QAppRspPacket>(
+//				new TcpClientIoService<QAppReqPacket, QAppRspPacket>()
+//						.setChannelsPerAddr(configs.getInt("server.client.tcp.channels", 2)));
 		this.qapp.setCodecService(new QAppClientCodecService())
 				.setRouterService(new PropertiesL5RouterService(configs, "spp"))
 				.setTimeoutManager(injector.getInstance(TimeoutManager.class))

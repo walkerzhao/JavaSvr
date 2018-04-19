@@ -1,7 +1,6 @@
 package com.tencent.jungle.svrcore.io;
 
 import com.google.inject.Injector;
-import com.tencent.jungle.svrcore.comm.RunMode;
 import com.tencent.jungle.svrcore.packet.CodecService;
 import com.tencent.jungle.svrcore.packet.IoPacket;
 import com.tencent.jungle.svrcore.ps.Processor;
@@ -33,7 +32,6 @@ public abstract class BaseServerIoService
 	public BaseServerIoService(Injector injector) {
 		this.injector = injector;
 		Configuration config = injector.getInstance(Configuration.class);
-		injector.getInstance(RunMode.class);
 		int bindPort = config.getInt("server.bind.port", 0);
 		if (bindPort != 0)
 			setBindNic(config.getString("server.bind.nic", "eth1"), bindPort);
