@@ -5,7 +5,10 @@
 	</Properties>
 	<Appenders>
 		<Console name="Console" target="SYSTEM_OUT">
-			<PatternLayout charset="UTF-8" pattern="%d [%-5p]%c{1}(%L) %m%n" />
+		    <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY" />
+			<PatternLayout charset="UTF-8">
+				<Pattern>%d [%-5p]%C{1}(%L) %m%n</Pattern>
+			</PatternLayout>
 		</Console>
 		<RollingRandomAccessFile name="DebugLog"  append="true" fileName="${logdir}/debug.log" filePattern="${logdir}/debug.%d{yyyy-MM-dd}.log">
 			<ThresholdFilter level="DEBUG" onMatch="ACCEPT" onMismatch="DENY" />
@@ -52,6 +55,9 @@
 			<AppenderRef ref="DebugLog" />
 			<AppenderRef ref="ErrorLog" />
 		</AsyncRoot>
+		<AsyncLogger name="Console" level="INFO">
+			<AppenderRef ref="Console" />
+		</AsyncLogger>
 		<AsyncLogger name="ServerFlow" level="INFO">
 			<AppenderRef ref="ServerFlow" />
 		</AsyncLogger>

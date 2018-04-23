@@ -19,12 +19,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class TcpSppServer {
+	Logger logger = LoggerFactory.getLogger(this.getClass());
 	public TcpSppServer(Injector injector, Configuration configs) {
 		NotFoundProcessorService notFoundAdapter = new NotFoundProcessorService(new PropertiesProcessorService(configs, injector), injector.getInstance(SppNotFoundProcessor.class));
 		WorkerService ws = injector.getInstance(WorkerService.class);
 		ServerIoService server = new TcpServerIoService(injector);
 		String nic = configs.getString("server.qapp.bind.nic", "eth1");
 		int port = configs.getInt("server.qapp.bind.port", 22054);
+		logger.info("nic:{} port:{}", nic, port);
 		server.setCodecService(new QAppServerCodecService()).setWorkerService(ws).setProcessorService(notFoundAdapter).setBindNic(nic, port);
 		server.start();
 	}

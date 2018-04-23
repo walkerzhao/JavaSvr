@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Bootstrap {
-    static Logger logger = LoggerFactory.getLogger(Bootstrap.class);
+    static Logger logger = LoggerFactory.getLogger("Console");
     public static void main(String[] args) throws ConfigurationException {
 //        System.out.println("hello,world");
         logger.info("hello,world");
