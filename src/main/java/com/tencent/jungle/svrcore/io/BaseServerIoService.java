@@ -51,6 +51,12 @@ public abstract class BaseServerIoService
 	}
 
 	@Override
+	public ServerIoService setBindIpPort(String ip, int port) {
+		this.bindAddr = new InetSocketAddress(ip, port);
+		return this;
+	}
+
+	@Override
 	public ServerIoService setCodecService(CodecService codec) {
 		this.codec = codec;
 		return this;

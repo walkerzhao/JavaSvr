@@ -15,6 +15,7 @@ import com.tencent.jungle.svrcore.ps.PropertiesProcessorService;
 import com.tencent.jungle.svrcore.utils.U;
 import io.netty.channel.Channel;
 import org.apache.commons.configuration.Configuration;
+import org.apache.commons.lang.SystemUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,9 +26,18 @@ public class TcpSppServer {
 		WorkerService ws = injector.getInstance(WorkerService.class);
 		ServerIoService server = new TcpServerIoService(injector);
 		String nic = configs.getString("server.qapp.bind.nic", "eth1");
+		String svrIp = configs.getString("server.qapp.bind.ip", "10.19.85.54");
 		int port = configs.getInt("server.qapp.bind.port", 22054);
 		logger.info("nic:{} port:{}", nic, port);
-		server.setCodecService(new QAppServerCodecService()).setWorkerService(ws).setProcessorService(notFoundAdapter).setBindNic(nic, port);
+		server.setCodecService(new QAppServerCodecService())
+				.setWorkerService(ws)
+				.setProcessorService(notFoundAdapter);
+		if(SystemUtils.IS_OS_WINDOWS) {
+			server.setBindIpPort(svrIp, port);
+		} else {
+			server.setBindNic(nic, port);
+		}
+
 		server.start();
 	}
 

@@ -1,0 +1,16 @@
+option java_package = "com.tencent.jungle.proto";
+option java_outer_classname = "EchoProto";
+
+//CMD=0
+//给echo
+message EchoReq
+{
+	optional uint64 uin = 1;//uin
+	optional string echo_msg = 2;   //echo msg
+}
+
+message EchoRsp
+{
+	optional uint64 uin = 1;//uin
+	optional string echo_msg = 2;   //echo msg
+}

@@ -27,6 +27,8 @@ public interface ServerIoService {
      */
     ServerIoService setBindAddr(SocketAddress addr);
 
+    ServerIoService setBindIpPort(String ip, int port);
+
     /**
      * 编解码器服务
      * @param codec
