@@ -6,17 +6,14 @@ import com.google.protobuf.Message;
 import com.google.protobuf.Parser;
 import com.tencent.jungle.api.APIException;
 import com.tencent.jungle.svrcore.codec.AdaptorPacket;
-import com.tencent.jungle.svrcore.comm.BaseProcessor;
 import com.tencent.jungle.svrcore.utils.BusinessException;
 import com.tencent.jungle.svrcore.utils.NicUtil;
 import com.tencent.jungle.svrcore.utils.U;
 import io.netty.channel.Channel;
-import kilim.KLog;
-import kilim.Pausable;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.net.InetSocketAddress;
 
 /**
@@ -25,8 +22,8 @@ import java.net.InetSocketAddress;
 public abstract class AdaptorBaseProcessor<REQ_MSG extends Message> extends BaseProcessor<AdaptorPacket, AdaptorPacket, REQ_MSG> {
     final Parser<REQ_MSG> parser;
 
-    static final KLog kflow = new KLog(LoggerFactory.getLogger("ServerFlow"));
-	static final KLog kwriteFlow = new KLog(LoggerFactory.getLogger("ServerWriteFlow"));
+    static final Logger kflow = LoggerFactory.getLogger("ServerFlow");
+	static final Logger kwriteFlow = LoggerFactory.getLogger("ServerWriteFlow");
 
     public AdaptorBaseProcessor(Injector injector, Parser<REQ_MSG> parser) {
         super(injector);
@@ -34,7 +31,7 @@ public abstract class AdaptorBaseProcessor<REQ_MSG extends Message> extends Base
     }
 
     @Override
-    protected REQ_MSG beforeService(AdaptorPacket pkg, Channel ioChannel) throws Exception, Pausable {
+    protected REQ_MSG beforeService(AdaptorPacket pkg, Channel ioChannel) throws Exception {
         ByteString body = (ByteString) (pkg != null && pkg.getBody() != null ? pkg.getBody() : null);
         REQ_MSG req = parser == null ? null : (body == null ? parser.parseFrom(ByteString.EMPTY) : parser.parseFrom(body));
         if (logger.isDebugEnabled()) {
@@ -52,10 +49,9 @@ public abstract class AdaptorBaseProcessor<REQ_MSG extends Message> extends Base
     /**
      * 异常处理。默认返回空包体
      *
-     * @throws Pausable
      */
     protected AdaptorPacket onException(AdaptorPacket req, Channel ioChannel,
-                                        Exception ex, REQ_MSG attach) throws Pausable {
+                                        Exception ex, REQ_MSG attach)  {
         logger.error(ioChannel.remoteAddress() + " processing " + req.getIoCmd() + " error", ex);
         int ec = 100003;
         if (ex instanceof BusinessException)
@@ -72,8 +68,8 @@ public abstract class AdaptorBaseProcessor<REQ_MSG extends Message> extends Base
     }
     
     /** 默认打本地日志 
-	 * @throws Pausable */
-	protected void doFlowLog(AdaptorPacket reqPkg, AdaptorPacket rspPkg, Channel ioChannel, REQ_MSG attach, Exception ex, StringBuilder log) throws Pausable{
+	  */
+	protected void doFlowLog(AdaptorPacket reqPkg, AdaptorPacket rspPkg, Channel ioChannel, REQ_MSG attach, Exception ex, StringBuilder log) {
 		if(isWriteProcessor()){
 			if(rspPkg.getRetCode() !=0){
 				kwriteFlow.error(log.toString());
@@ -90,7 +86,7 @@ public abstract class AdaptorBaseProcessor<REQ_MSG extends Message> extends Base
 	}
 
     @Override
-    protected StringBuilder onFormatFlowLog(AdaptorPacket reqPkg, AdaptorPacket rspPkg, Channel ch, REQ_MSG req, Exception ex) throws Exception, Pausable {
+    protected StringBuilder onFormatFlowLog(AdaptorPacket reqPkg, AdaptorPacket rspPkg, Channel ch, REQ_MSG req, Exception ex) throws Exception {
         if (reqPkg == null || reqPkg.getBody() == null)
             return new StringBuilder("EMPTY REQUEST " + ch.remoteAddress());
         String strReq = req != null ? U.proto2string(req) : "-";
