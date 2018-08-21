@@ -1,4 +1,4 @@
-option java_package = "com.tencent.jungle.proto";
+option java_package = "com.tencent.dolphin.proto";
 option java_outer_classname = "EchoProto";
 
 //CMD=0

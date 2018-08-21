@@ -44,7 +44,7 @@ public final class EchoProto {
      *echo msg
      * </pre>
      */
-    java.lang.String getEchoMsg();
+    String getEchoMsg();
     /**
      * <code>optional string echo_msg = 2;</code>
      *
@@ -84,7 +84,7 @@ public final class EchoProto {
     }
 
     private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
         getUnknownFields() {
       return this.unknownFields;
@@ -137,14 +137,14 @@ public final class EchoProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.tencent.dolphin.proto.EchoProto.internal_static_EchoReq_descriptor;
+      return EchoProto.internal_static_EchoReq_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.tencent.dolphin.proto.EchoProto.internal_static_EchoReq_fieldAccessorTable
+      return EchoProto.internal_static_EchoReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.tencent.dolphin.proto.EchoProto.EchoReq.class, com.tencent.dolphin.proto.EchoProto.EchoReq.Builder.class);
+              EchoReq.class, Builder.class);
     }
 
     public static com.google.protobuf.Parser<EchoReq> PARSER =
@@ -157,7 +157,7 @@ public final class EchoProto {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<EchoReq> getParserForType() {
       return PARSER;
     }
@@ -187,7 +187,7 @@ public final class EchoProto {
     }
 
     public static final int ECHO_MSG_FIELD_NUMBER = 2;
-    private java.lang.Object echoMsg_;
+    private Object echoMsg_;
     /**
      * <code>optional string echo_msg = 2;</code>
      *
@@ -205,14 +205,14 @@ public final class EchoProto {
      *echo msg
      * </pre>
      */
-    public java.lang.String getEchoMsg() {
-      java.lang.Object ref = echoMsg_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getEchoMsg() {
+      Object ref = echoMsg_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           echoMsg_ = s;
         }
@@ -228,11 +228,11 @@ public final class EchoProto {
      */
     public com.google.protobuf.ByteString
         getEchoMsgBytes() {
-      java.lang.Object ref = echoMsg_;
-      if (ref instanceof java.lang.String) {
+      Object ref = echoMsg_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         echoMsg_ = b;
         return b;
       } else {
@@ -286,59 +286,59 @@ public final class EchoProto {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tencent.dolphin.proto.EchoProto.EchoReq parseFrom(
+    public static EchoReq parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tencent.dolphin.proto.EchoProto.EchoReq parseFrom(
+    public static EchoReq parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tencent.dolphin.proto.EchoProto.EchoReq parseFrom(byte[] data)
+    public static EchoReq parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tencent.dolphin.proto.EchoProto.EchoReq parseFrom(
+    public static EchoReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tencent.dolphin.proto.EchoProto.EchoReq parseFrom(java.io.InputStream input)
+    public static EchoReq parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tencent.dolphin.proto.EchoProto.EchoReq parseFrom(
+    public static EchoReq parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tencent.dolphin.proto.EchoProto.EchoReq parseDelimitedFrom(java.io.InputStream input)
+    public static EchoReq parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tencent.dolphin.proto.EchoProto.EchoReq parseDelimitedFrom(
+    public static EchoReq parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tencent.dolphin.proto.EchoProto.EchoReq parseFrom(
+    public static EchoReq parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tencent.dolphin.proto.EchoProto.EchoReq parseFrom(
+    public static EchoReq parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -347,14 +347,14 @@ public final class EchoProto {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tencent.dolphin.proto.EchoProto.EchoReq prototype) {
+    public static Builder newBuilder(EchoReq prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -369,17 +369,17 @@ public final class EchoProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:EchoReq)
-        com.tencent.dolphin.proto.EchoProto.EchoReqOrBuilder {
+        EchoReqOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.tencent.dolphin.proto.EchoProto.internal_static_EchoReq_descriptor;
+        return EchoProto.internal_static_EchoReq_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.tencent.dolphin.proto.EchoProto.internal_static_EchoReq_fieldAccessorTable
+        return EchoProto.internal_static_EchoReq_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.tencent.dolphin.proto.EchoProto.EchoReq.class, com.tencent.dolphin.proto.EchoProto.EchoReq.Builder.class);
+                EchoReq.class, Builder.class);
       }
 
       // Construct using com.tencent.dolphin.proto.EchoProto.EchoReq.newBuilder()
@@ -388,7 +388,7 @@ public final class EchoProto {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -415,23 +415,23 @@ public final class EchoProto {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.tencent.dolphin.proto.EchoProto.internal_static_EchoReq_descriptor;
+        return EchoProto.internal_static_EchoReq_descriptor;
       }
 
-      public com.tencent.dolphin.proto.EchoProto.EchoReq getDefaultInstanceForType() {
-        return com.tencent.dolphin.proto.EchoProto.EchoReq.getDefaultInstance();
+      public EchoReq getDefaultInstanceForType() {
+        return EchoReq.getDefaultInstance();
       }
 
-      public com.tencent.dolphin.proto.EchoProto.EchoReq build() {
-        com.tencent.dolphin.proto.EchoProto.EchoReq result = buildPartial();
+      public EchoReq build() {
+        EchoReq result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tencent.dolphin.proto.EchoProto.EchoReq buildPartial() {
-        com.tencent.dolphin.proto.EchoProto.EchoReq result = new com.tencent.dolphin.proto.EchoProto.EchoReq(this);
+      public EchoReq buildPartial() {
+        EchoReq result = new EchoReq(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -448,16 +448,16 @@ public final class EchoProto {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.tencent.dolphin.proto.EchoProto.EchoReq) {
-          return mergeFrom((com.tencent.dolphin.proto.EchoProto.EchoReq)other);
+        if (other instanceof EchoReq) {
+          return mergeFrom((EchoReq)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.tencent.dolphin.proto.EchoProto.EchoReq other) {
-        if (other == com.tencent.dolphin.proto.EchoProto.EchoReq.getDefaultInstance()) return this;
+      public Builder mergeFrom(EchoReq other) {
+        if (other == EchoReq.getDefaultInstance()) return this;
         if (other.hasUin()) {
           setUin(other.getUin());
         }
@@ -478,11 +478,11 @@ public final class EchoProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tencent.dolphin.proto.EchoProto.EchoReq parsedMessage = null;
+        EchoReq parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tencent.dolphin.proto.EchoProto.EchoReq) e.getUnfinishedMessage();
+          parsedMessage = (EchoReq) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -541,7 +541,7 @@ public final class EchoProto {
         return this;
       }
 
-      private java.lang.Object echoMsg_ = "";
+      private Object echoMsg_ = "";
       /**
        * <code>optional string echo_msg = 2;</code>
        *
@@ -559,18 +559,18 @@ public final class EchoProto {
        *echo msg
        * </pre>
        */
-      public java.lang.String getEchoMsg() {
-        java.lang.Object ref = echoMsg_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getEchoMsg() {
+        Object ref = echoMsg_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             echoMsg_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -582,11 +582,11 @@ public final class EchoProto {
        */
       public com.google.protobuf.ByteString
           getEchoMsgBytes() {
-        java.lang.Object ref = echoMsg_;
+        Object ref = echoMsg_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           echoMsg_ = b;
           return b;
         } else {
@@ -601,7 +601,7 @@ public final class EchoProto {
        * </pre>
        */
       public Builder setEchoMsg(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -688,7 +688,7 @@ public final class EchoProto {
      *echo msg
      * </pre>
      */
-    java.lang.String getEchoMsg();
+    String getEchoMsg();
     /**
      * <code>optional string echo_msg = 2;</code>
      *
@@ -723,7 +723,7 @@ public final class EchoProto {
     }
 
     private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
         getUnknownFields() {
       return this.unknownFields;
@@ -776,14 +776,14 @@ public final class EchoProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.tencent.dolphin.proto.EchoProto.internal_static_EchoRsp_descriptor;
+      return EchoProto.internal_static_EchoRsp_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.tencent.dolphin.proto.EchoProto.internal_static_EchoRsp_fieldAccessorTable
+      return EchoProto.internal_static_EchoRsp_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.tencent.dolphin.proto.EchoProto.EchoRsp.class, com.tencent.dolphin.proto.EchoProto.EchoRsp.Builder.class);
+              EchoRsp.class, Builder.class);
     }
 
     public static com.google.protobuf.Parser<EchoRsp> PARSER =
@@ -796,7 +796,7 @@ public final class EchoProto {
       }
     };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<EchoRsp> getParserForType() {
       return PARSER;
     }
@@ -826,7 +826,7 @@ public final class EchoProto {
     }
 
     public static final int ECHO_MSG_FIELD_NUMBER = 2;
-    private java.lang.Object echoMsg_;
+    private Object echoMsg_;
     /**
      * <code>optional string echo_msg = 2;</code>
      *
@@ -844,14 +844,14 @@ public final class EchoProto {
      *echo msg
      * </pre>
      */
-    public java.lang.String getEchoMsg() {
-      java.lang.Object ref = echoMsg_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getEchoMsg() {
+      Object ref = echoMsg_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           echoMsg_ = s;
         }
@@ -867,11 +867,11 @@ public final class EchoProto {
      */
     public com.google.protobuf.ByteString
         getEchoMsgBytes() {
-      java.lang.Object ref = echoMsg_;
-      if (ref instanceof java.lang.String) {
+      Object ref = echoMsg_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         echoMsg_ = b;
         return b;
       } else {
@@ -925,59 +925,59 @@ public final class EchoProto {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
+    @Override
+    protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static com.tencent.dolphin.proto.EchoProto.EchoRsp parseFrom(
+    public static EchoRsp parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tencent.dolphin.proto.EchoProto.EchoRsp parseFrom(
+    public static EchoRsp parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tencent.dolphin.proto.EchoProto.EchoRsp parseFrom(byte[] data)
+    public static EchoRsp parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.tencent.dolphin.proto.EchoProto.EchoRsp parseFrom(
+    public static EchoRsp parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.tencent.dolphin.proto.EchoProto.EchoRsp parseFrom(java.io.InputStream input)
+    public static EchoRsp parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tencent.dolphin.proto.EchoProto.EchoRsp parseFrom(
+    public static EchoRsp parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.tencent.dolphin.proto.EchoProto.EchoRsp parseDelimitedFrom(java.io.InputStream input)
+    public static EchoRsp parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.tencent.dolphin.proto.EchoProto.EchoRsp parseDelimitedFrom(
+    public static EchoRsp parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.tencent.dolphin.proto.EchoProto.EchoRsp parseFrom(
+    public static EchoRsp parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.tencent.dolphin.proto.EchoProto.EchoRsp parseFrom(
+    public static EchoRsp parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -986,14 +986,14 @@ public final class EchoProto {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tencent.dolphin.proto.EchoProto.EchoRsp prototype) {
+    public static Builder newBuilder(EchoRsp prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -1003,17 +1003,17 @@ public final class EchoProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:EchoRsp)
-        com.tencent.dolphin.proto.EchoProto.EchoRspOrBuilder {
+        EchoRspOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.tencent.dolphin.proto.EchoProto.internal_static_EchoRsp_descriptor;
+        return EchoProto.internal_static_EchoRsp_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.tencent.dolphin.proto.EchoProto.internal_static_EchoRsp_fieldAccessorTable
+        return EchoProto.internal_static_EchoRsp_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.tencent.dolphin.proto.EchoProto.EchoRsp.class, com.tencent.dolphin.proto.EchoProto.EchoRsp.Builder.class);
+                EchoRsp.class, Builder.class);
       }
 
       // Construct using com.tencent.dolphin.proto.EchoProto.EchoRsp.newBuilder()
@@ -1022,7 +1022,7 @@ public final class EchoProto {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -1049,23 +1049,23 @@ public final class EchoProto {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.tencent.dolphin.proto.EchoProto.internal_static_EchoRsp_descriptor;
+        return EchoProto.internal_static_EchoRsp_descriptor;
       }
 
-      public com.tencent.dolphin.proto.EchoProto.EchoRsp getDefaultInstanceForType() {
-        return com.tencent.dolphin.proto.EchoProto.EchoRsp.getDefaultInstance();
+      public EchoRsp getDefaultInstanceForType() {
+        return EchoRsp.getDefaultInstance();
       }
 
-      public com.tencent.dolphin.proto.EchoProto.EchoRsp build() {
-        com.tencent.dolphin.proto.EchoProto.EchoRsp result = buildPartial();
+      public EchoRsp build() {
+        EchoRsp result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.tencent.dolphin.proto.EchoProto.EchoRsp buildPartial() {
-        com.tencent.dolphin.proto.EchoProto.EchoRsp result = new com.tencent.dolphin.proto.EchoProto.EchoRsp(this);
+      public EchoRsp buildPartial() {
+        EchoRsp result = new EchoRsp(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -1082,16 +1082,16 @@ public final class EchoProto {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.tencent.dolphin.proto.EchoProto.EchoRsp) {
-          return mergeFrom((com.tencent.dolphin.proto.EchoProto.EchoRsp)other);
+        if (other instanceof EchoRsp) {
+          return mergeFrom((EchoRsp)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.tencent.dolphin.proto.EchoProto.EchoRsp other) {
-        if (other == com.tencent.dolphin.proto.EchoProto.EchoRsp.getDefaultInstance()) return this;
+      public Builder mergeFrom(EchoRsp other) {
+        if (other == EchoRsp.getDefaultInstance()) return this;
         if (other.hasUin()) {
           setUin(other.getUin());
         }
@@ -1112,11 +1112,11 @@ public final class EchoProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.tencent.dolphin.proto.EchoProto.EchoRsp parsedMessage = null;
+        EchoRsp parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.tencent.dolphin.proto.EchoProto.EchoRsp) e.getUnfinishedMessage();
+          parsedMessage = (EchoRsp) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -1175,7 +1175,7 @@ public final class EchoProto {
         return this;
       }
 
-      private java.lang.Object echoMsg_ = "";
+      private Object echoMsg_ = "";
       /**
        * <code>optional string echo_msg = 2;</code>
        *
@@ -1193,18 +1193,18 @@ public final class EchoProto {
        *echo msg
        * </pre>
        */
-      public java.lang.String getEchoMsg() {
-        java.lang.Object ref = echoMsg_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getEchoMsg() {
+        Object ref = echoMsg_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             echoMsg_ = s;
           }
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -1216,11 +1216,11 @@ public final class EchoProto {
        */
       public com.google.protobuf.ByteString
           getEchoMsgBytes() {
-        java.lang.Object ref = echoMsg_;
+        Object ref = echoMsg_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           echoMsg_ = b;
           return b;
         } else {
@@ -1235,7 +1235,7 @@ public final class EchoProto {
        * </pre>
        */
       public Builder setEchoMsg(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -1304,7 +1304,7 @@ public final class EchoProto {
   private static com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n\necho.proto\"(\n\007EchoReq\022\013\n\003uin\030\001 \001(\004\022\020\n\010" +
       "echo_msg\030\002 \001(\t\"(\n\007EchoRsp\022\013\n\003uin\030\001 \001(\004\022\020" +
       "\n\010echo_msg\030\002 \001(\tB%\n\030com.tencent.dolphin.p" +
@@ -1327,13 +1327,13 @@ public final class EchoProto {
     internal_static_EchoReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_EchoReq_descriptor,
-        new java.lang.String[] { "Uin", "EchoMsg", });
+        new String[] { "Uin", "EchoMsg", });
     internal_static_EchoRsp_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_EchoRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_EchoRsp_descriptor,
-        new java.lang.String[] { "Uin", "EchoMsg", });
+        new String[] { "Uin", "EchoMsg", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

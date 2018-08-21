@@ -1,7 +1,8 @@
-# JavaSvr
-java编写的后端服务器
+# JavaSvr--Dolphin
+* java编写的后端服务器.
 
-# 需要做一下抽象：
+
+# 需要做以下抽象
 * 泛化网络协议包（IoPacket）。请求-响应模式是我们最普遍的业务场景。
 * 服务端I/O服务（ServerIoService）。负责网络收发工作，是对普通tcp/udp网络I/O的抽象。
 * 业务层编解码服务（CodecService）。抽象了一致的流协议编解码服务。

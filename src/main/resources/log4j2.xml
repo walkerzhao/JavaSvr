@@ -78,9 +78,9 @@
 		<AsyncLogger name="org.apache.zookeeper" level="WARN" />
 		<AsyncLogger name="org.apache.commons.configuration.ConfigurationUtils" level="WARN" />
 		<AsyncLogger name="freemarker.cache" level="WARN" />
-		<AsyncLogger name="com.tencent.jungle.worker.nio.zmq" level="ERROR" />
-		<AsyncLogger name="com.tencent.jungle.nativex.tmem.async" level="INFO" />
-		<AsyncLogger name="com.tencent.jungle.huayang.config.HomeRcmdReader" level="ERROR" />
-		<AsyncLogger name="com.tencent.jungle.svrcore.sso" level="ERROR" />
+		<AsyncLogger name="com.tencent.dolphin.worker.nio.zmq" level="ERROR" />
+		<AsyncLogger name="com.tencent.dolphin.nativex.tmem.async" level="INFO" />
+		<AsyncLogger name="com.tencent.dolphin.huayang.config.HomeRcmdReader" level="ERROR" />
+		<AsyncLogger name="com.tencent.dolphin.svrcore.sso" level="ERROR" />
 	</loggers>
 </Configuration>

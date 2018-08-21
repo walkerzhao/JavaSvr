@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="DEBUG">
+<Configuration status="INFO">
 	<Properties>
 		<Property name="logdir">../log</Property>
 	</Properties>
 	<Appenders>
 		<Console name="Console" target="SYSTEM_OUT">
-			<PatternLayout charset="UTF-8" pattern="%d [%-5p]%c{1}(%L) %m%n" />
+		    <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY" />
+			<PatternLayout charset="UTF-8">
+				<Pattern>%d [%-5p]%C{1}(%L) %m%n</Pattern>
+			</PatternLayout>
 		</Console>
 		<RollingRandomAccessFile name="DebugLog"  append="true" fileName="${logdir}/debug.log" filePattern="${logdir}/debug.%d{yyyy-MM-dd}.log">
 			<ThresholdFilter level="DEBUG" onMatch="ACCEPT" onMismatch="DENY" />
@@ -46,11 +49,15 @@
 		</RollingRandomAccessFile>
 	</Appenders>
 	<loggers>
-		<AsyncRoot level="DEBUG" includeLocation="true">
+		<AsyncRoot level="INFO" includeLocation="true">
 			<!-- <LogLimitFilter rate="10" onMatch="ACCEPT" onMisMatch="DENY" /> -->
+			<AppenderRef ref="Console" />
 			<AppenderRef ref="DebugLog" />
 			<AppenderRef ref="ErrorLog" />
 		</AsyncRoot>
+		<AsyncLogger name="Console" level="INFO">
+			<AppenderRef ref="Console" />
+		</AsyncLogger>
 		<AsyncLogger name="ServerFlow" level="INFO">
 			<AppenderRef ref="ServerFlow" />
 		</AsyncLogger>
@@ -71,9 +78,9 @@
 		<AsyncLogger name="org.apache.zookeeper" level="WARN" />
 		<AsyncLogger name="org.apache.commons.configuration.ConfigurationUtils" level="WARN" />
 		<AsyncLogger name="freemarker.cache" level="WARN" />
-		<AsyncLogger name="com.tencent.jungle.worker.nio.zmq" level="ERROR" />
-		<AsyncLogger name="com.tencent.jungle.nativex.tmem.async" level="INFO" />
-		<AsyncLogger name="com.tencent.jungle.huayang.config.HomeRcmdReader" level="ERROR" />
-		<AsyncLogger name="com.tencent.jungle.svrcore.sso" level="ERROR" />
+		<AsyncLogger name="com.tencent.dolphin.worker.nio.zmq" level="ERROR" />
+		<AsyncLogger name="com.tencent.dolphin.nativex.tmem.async" level="INFO" />
+		<AsyncLogger name="com.tencent.dolphin.huayang.config.HomeRcmdReader" level="ERROR" />
+		<AsyncLogger name="com.tencent.dolphin.svrcore.sso" level="ERROR" />
 	</loggers>
 </Configuration>
