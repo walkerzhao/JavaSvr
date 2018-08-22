@@ -31,7 +31,7 @@ public class TcpSppServer {
 		server.setCodecService(new QAppServerCodecService())
 				.setWorkerService(ws)
 				.setProcessorService(notFoundAdapter);
-		if(SystemUtils.IS_OS_WINDOWS) {
+		if(SystemUtils.IS_OS_WINDOWS || SystemUtils.IS_OS_MAC_OSX) {
 			server.setBindIpPort(svrIp, port);
 		} else {
 			server.setBindNic(nic, port);

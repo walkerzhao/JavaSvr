@@ -63,37 +63,28 @@ public final class EchoProto {
    *给echo
    * </pre>
    */
-  public static final class EchoReq extends
+  public  static final class EchoReq extends
       com.google.protobuf.GeneratedMessage implements
       // @@protoc_insertion_point(message_implements:EchoReq)
       EchoReqOrBuilder {
     // Use EchoReq.newBuilder() to construct.
     private EchoReq(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
-      this.unknownFields = builder.getUnknownFields();
     }
-    private EchoReq(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final EchoReq defaultInstance;
-    public static EchoReq getDefaultInstance() {
-      return defaultInstance;
+    private EchoReq() {
+      uin_ = 0L;
+      echoMsg_ = "";
     }
 
-    public EchoReq getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
+    getUnknownFields() {
       return this.unknownFields;
     }
     private EchoReq(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) {
+      this();
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -126,10 +117,11 @@ public final class EchoProto {
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
+        throw new RuntimeException(e.setUnfinishedMessage(this));
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
+        throw new RuntimeException(
+            new com.google.protobuf.InvalidProtocolBufferException(
+                e.getMessage()).setUnfinishedMessage(this));
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -145,21 +137,6 @@ public final class EchoProto {
       return com.tencent.dolphin.proto.EchoProto.internal_static_EchoReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.tencent.dolphin.proto.EchoProto.EchoReq.class, com.tencent.dolphin.proto.EchoProto.EchoReq.Builder.class);
-    }
-
-    public static com.google.protobuf.Parser<EchoReq> PARSER =
-        new com.google.protobuf.AbstractParser<EchoReq>() {
-      public EchoReq parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new EchoReq(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<EchoReq> getParserForType() {
-      return PARSER;
     }
 
     private int bitField0_;
@@ -187,7 +164,7 @@ public final class EchoProto {
     }
 
     public static final int ECHO_MSG_FIELD_NUMBER = 2;
-    private java.lang.Object echoMsg_;
+    private volatile java.lang.Object echoMsg_;
     /**
      * <code>optional string echo_msg = 2;</code>
      *
@@ -240,10 +217,6 @@ public final class EchoProto {
       }
     }
 
-    private void initFields() {
-      uin_ = 0L;
-      echoMsg_ = "";
-    }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -256,19 +229,17 @@ public final class EchoProto {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeUInt64(1, uin_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getEchoMsgBytes());
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, echoMsg_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
-    private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -277,21 +248,14 @@ public final class EchoProto {
           .computeUInt64Size(1, uin_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getEchoMsgBytes());
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, echoMsg_);
       }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-
     public static com.tencent.dolphin.proto.EchoProto.EchoReq parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -345,12 +309,17 @@ public final class EchoProto {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tencent.dolphin.proto.EchoProto.EchoReq prototype) {
-      return newBuilder().mergeFrom(prototype);
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
     }
-    public Builder toBuilder() { return newBuilder(this); }
+    public static Builder newBuilder(com.tencent.dolphin.proto.EchoProto.EchoReq prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
     @java.lang.Override
     protected Builder newBuilderForType(
@@ -396,10 +365,6 @@ public final class EchoProto {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         }
       }
-      private static Builder create() {
-        return new Builder();
-      }
-
       public Builder clear() {
         super.clear();
         uin_ = 0L;
@@ -407,10 +372,6 @@ public final class EchoProto {
         echoMsg_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
-      }
-
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
       }
 
       public com.google.protobuf.Descriptors.Descriptor
@@ -466,7 +427,8 @@ public final class EchoProto {
           echoMsg_ = other.echoMsg_;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
         return this;
       }
 
@@ -644,12 +606,48 @@ public final class EchoProto {
       // @@protoc_insertion_point(builder_scope:EchoReq)
     }
 
+    // @@protoc_insertion_point(class_scope:EchoReq)
+    private static final com.tencent.dolphin.proto.EchoProto.EchoReq DEFAULT_INSTANCE;
     static {
-      defaultInstance = new EchoReq(true);
-      defaultInstance.initFields();
+      DEFAULT_INSTANCE = new com.tencent.dolphin.proto.EchoProto.EchoReq();
     }
 
-    // @@protoc_insertion_point(class_scope:EchoReq)
+    public static com.tencent.dolphin.proto.EchoProto.EchoReq getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<EchoReq>
+        PARSER = new com.google.protobuf.AbstractParser<EchoReq>() {
+      public EchoReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        try {
+          return new EchoReq(input, extensionRegistry);
+        } catch (RuntimeException e) {
+          if (e.getCause() instanceof
+              com.google.protobuf.InvalidProtocolBufferException) {
+            throw (com.google.protobuf.InvalidProtocolBufferException)
+                e.getCause();
+          }
+          throw e;
+        }
+      }
+    };
+
+    public static com.google.protobuf.Parser<EchoReq> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<EchoReq> getParserForType() {
+      return PARSER;
+    }
+
+    public com.tencent.dolphin.proto.EchoProto.EchoReq getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
   public interface EchoRspOrBuilder extends
@@ -702,37 +700,28 @@ public final class EchoProto {
   /**
    * Protobuf type {@code EchoRsp}
    */
-  public static final class EchoRsp extends
+  public  static final class EchoRsp extends
       com.google.protobuf.GeneratedMessage implements
       // @@protoc_insertion_point(message_implements:EchoRsp)
       EchoRspOrBuilder {
     // Use EchoRsp.newBuilder() to construct.
     private EchoRsp(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
-      this.unknownFields = builder.getUnknownFields();
     }
-    private EchoRsp(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final EchoRsp defaultInstance;
-    public static EchoRsp getDefaultInstance() {
-      return defaultInstance;
+    private EchoRsp() {
+      uin_ = 0L;
+      echoMsg_ = "";
     }
 
-    public EchoRsp getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
+    getUnknownFields() {
       return this.unknownFields;
     }
     private EchoRsp(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) {
+      this();
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -765,10 +754,11 @@ public final class EchoProto {
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
+        throw new RuntimeException(e.setUnfinishedMessage(this));
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
+        throw new RuntimeException(
+            new com.google.protobuf.InvalidProtocolBufferException(
+                e.getMessage()).setUnfinishedMessage(this));
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -784,21 +774,6 @@ public final class EchoProto {
       return com.tencent.dolphin.proto.EchoProto.internal_static_EchoRsp_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.tencent.dolphin.proto.EchoProto.EchoRsp.class, com.tencent.dolphin.proto.EchoProto.EchoRsp.Builder.class);
-    }
-
-    public static com.google.protobuf.Parser<EchoRsp> PARSER =
-        new com.google.protobuf.AbstractParser<EchoRsp>() {
-      public EchoRsp parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new EchoRsp(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<EchoRsp> getParserForType() {
-      return PARSER;
     }
 
     private int bitField0_;
@@ -826,7 +801,7 @@ public final class EchoProto {
     }
 
     public static final int ECHO_MSG_FIELD_NUMBER = 2;
-    private java.lang.Object echoMsg_;
+    private volatile java.lang.Object echoMsg_;
     /**
      * <code>optional string echo_msg = 2;</code>
      *
@@ -879,10 +854,6 @@ public final class EchoProto {
       }
     }
 
-    private void initFields() {
-      uin_ = 0L;
-      echoMsg_ = "";
-    }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -895,19 +866,17 @@ public final class EchoProto {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeUInt64(1, uin_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getEchoMsgBytes());
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, echoMsg_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
-    private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -916,21 +885,14 @@ public final class EchoProto {
           .computeUInt64Size(1, uin_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getEchoMsgBytes());
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, echoMsg_);
       }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-
     public static com.tencent.dolphin.proto.EchoProto.EchoRsp parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -984,12 +946,17 @@ public final class EchoProto {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.tencent.dolphin.proto.EchoProto.EchoRsp prototype) {
-      return newBuilder().mergeFrom(prototype);
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
     }
-    public Builder toBuilder() { return newBuilder(this); }
+    public static Builder newBuilder(com.tencent.dolphin.proto.EchoProto.EchoRsp prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
     @java.lang.Override
     protected Builder newBuilderForType(
@@ -1030,10 +997,6 @@ public final class EchoProto {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         }
       }
-      private static Builder create() {
-        return new Builder();
-      }
-
       public Builder clear() {
         super.clear();
         uin_ = 0L;
@@ -1041,10 +1004,6 @@ public final class EchoProto {
         echoMsg_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
-      }
-
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
       }
 
       public com.google.protobuf.Descriptors.Descriptor
@@ -1100,7 +1059,8 @@ public final class EchoProto {
           echoMsg_ = other.echoMsg_;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
         return this;
       }
 
@@ -1278,20 +1238,56 @@ public final class EchoProto {
       // @@protoc_insertion_point(builder_scope:EchoRsp)
     }
 
+    // @@protoc_insertion_point(class_scope:EchoRsp)
+    private static final com.tencent.dolphin.proto.EchoProto.EchoRsp DEFAULT_INSTANCE;
     static {
-      defaultInstance = new EchoRsp(true);
-      defaultInstance.initFields();
+      DEFAULT_INSTANCE = new com.tencent.dolphin.proto.EchoProto.EchoRsp();
     }
 
-    // @@protoc_insertion_point(class_scope:EchoRsp)
+    public static com.tencent.dolphin.proto.EchoProto.EchoRsp getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<EchoRsp>
+        PARSER = new com.google.protobuf.AbstractParser<EchoRsp>() {
+      public EchoRsp parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        try {
+          return new EchoRsp(input, extensionRegistry);
+        } catch (RuntimeException e) {
+          if (e.getCause() instanceof
+              com.google.protobuf.InvalidProtocolBufferException) {
+            throw (com.google.protobuf.InvalidProtocolBufferException)
+                e.getCause();
+          }
+          throw e;
+        }
+      }
+    };
+
+    public static com.google.protobuf.Parser<EchoRsp> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<EchoRsp> getParserForType() {
+      return PARSER;
+    }
+
+    public com.tencent.dolphin.proto.EchoProto.EchoRsp getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
+  private static com.google.protobuf.Descriptors.Descriptor
     internal_static_EchoReq_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_EchoReq_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
+  private static com.google.protobuf.Descriptors.Descriptor
     internal_static_EchoRsp_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -1307,8 +1303,8 @@ public final class EchoProto {
     java.lang.String[] descriptorData = {
       "\n\necho.proto\"(\n\007EchoReq\022\013\n\003uin\030\001 \001(\004\022\020\n\010" +
       "echo_msg\030\002 \001(\t\"(\n\007EchoRsp\022\013\n\003uin\030\001 \001(\004\022\020" +
-      "\n\010echo_msg\030\002 \001(\tB%\n\030com.tencent.dolphin.p" +
-      "rotoB\tEchoProto"
+      "\n\010echo_msg\030\002 \001(\tB&\n\031com.tencent.dolphin." +
+      "protoB\tEchoProto"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
