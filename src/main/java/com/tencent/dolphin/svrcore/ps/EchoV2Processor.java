@@ -5,24 +5,23 @@ import com.google.inject.Injector;
 import com.google.inject.Singleton;
 import com.tencent.dolphin.proto.EchoProto;
 import com.tencent.dolphin.svrcore.codec.AdaptorPacket;
-import com.tencent.dolphin.svrcore.comm.BaseIoPacket;
 import io.netty.channel.Channel;
 import org.apache.commons.configuration.Configuration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @Singleton
-public class EchoProcessor extends AdaptorBaseProcessor< EchoProto.EchoReq> {
+public class EchoV2Processor extends AdaptorBaseProcessor< EchoProto.EchoReq> {
 
-    protected static final Logger logger = LoggerFactory.getLogger(EchoProcessor.class);
+    protected static final Logger logger = LoggerFactory.getLogger(EchoV2Processor.class);
 
-        
+
     protected Configuration configuration;
 ;
 
 
     @Inject
-    public EchoProcessor(Injector injector) {
+    public EchoV2Processor(Injector injector) {
         super(injector,EchoProto.EchoReq.PARSER);
         configuration = injector.getInstance(Configuration.class);
         logger.debug("configuration:{}", configuration.toString());

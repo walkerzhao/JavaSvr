@@ -1,5 +1,6 @@
 package com.tencent.dolphin.svrcore.qapp;
 
+import com.tencent.dolphin.svrcore.codec.AdaptorPacket;
 import com.tencent.dolphin.svrcore.packet.IoPacket;
 import com.tencent.dolphin.svrcore.comm.BaseIoPacket;
 import com.tencent.dolphin.svrcore.utils.U;
