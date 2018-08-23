@@ -8,10 +8,10 @@ public final class QAppMsg {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
   }
-  public interface QAppRequestOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface QAppRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:QAppRequest)
+      com.google.protobuf.MessageOrBuilder {
 
-    // optional uint32 version = 1;
     /**
      * <code>optional uint32 version = 1;</code>
      *
@@ -29,7 +29,6 @@ public final class QAppMsg {
      */
     int getVersion();
 
-    // optional string app_name = 2;
     /**
      * <code>optional string app_name = 2;</code>
      *
@@ -45,7 +44,7 @@ public final class QAppMsg {
      *业务名称
      * </pre>
      */
-    String getAppName();
+    java.lang.String getAppName();
     /**
      * <code>optional string app_name = 2;</code>
      *
@@ -56,7 +55,6 @@ public final class QAppMsg {
     com.google.protobuf.ByteString
         getAppNameBytes();
 
-    // optional string cmd = 3;
     /**
      * <code>optional string cmd = 3;</code>
      *
@@ -72,7 +70,7 @@ public final class QAppMsg {
      *请求命令字
      * </pre>
      */
-    String getCmd();
+    java.lang.String getCmd();
     /**
      * <code>optional string cmd = 3;</code>
      *
@@ -83,12 +81,11 @@ public final class QAppMsg {
     com.google.protobuf.ByteString
         getCmdBytes();
 
-    // optional uint64 seq = 4;
     /**
      * <code>optional uint64 seq = 4;</code>
      *
      * <pre>
-     *请求序列号
+     *请求序列号    
      * </pre>
      */
     boolean hasSeq();
@@ -96,12 +93,11 @@ public final class QAppMsg {
      * <code>optional uint64 seq = 4;</code>
      *
      * <pre>
-     *请求序列号
+     *请求序列号    
      * </pre>
      */
     long getSeq();
 
-    // optional string client_ip = 5;
     /**
      * <code>optional string client_ip = 5;</code>
      *
@@ -117,7 +113,7 @@ public final class QAppMsg {
      *客户端ip
      * </pre>
      */
-    String getClientIp();
+    java.lang.String getClientIp();
     /**
      * <code>optional string client_ip = 5;</code>
      *
@@ -128,7 +124,6 @@ public final class QAppMsg {
     com.google.protobuf.ByteString
         getClientIpBytes();
 
-    // optional string service_ip = 6;
     /**
      * <code>optional string service_ip = 6;</code>
      *
@@ -144,7 +139,7 @@ public final class QAppMsg {
      *服务端ip
      * </pre>
      */
-    String getServiceIp();
+    java.lang.String getServiceIp();
     /**
      * <code>optional string service_ip = 6;</code>
      *
@@ -155,7 +150,6 @@ public final class QAppMsg {
     com.google.protobuf.ByteString
         getServiceIpBytes();
 
-    // optional string business = 7;
     /**
      * <code>optional string business = 7;</code>
      *
@@ -171,7 +165,7 @@ public final class QAppMsg {
      *调用方
      * </pre>
      */
-    String getBusiness();
+    java.lang.String getBusiness();
     /**
      * <code>optional string business = 7;</code>
      *
@@ -182,7 +176,6 @@ public final class QAppMsg {
     com.google.protobuf.ByteString
         getBusinessBytes();
 
-    // optional bytes auth_key = 8;
     /**
      * <code>optional bytes auth_key = 8;</code>
      *
@@ -200,7 +193,6 @@ public final class QAppMsg {
      */
     com.google.protobuf.ByteString getAuthKey();
 
-    // optional uint32 auth_type = 9;
     /**
      * <code>optional uint32 auth_type = 9;</code>
      *
@@ -218,7 +210,6 @@ public final class QAppMsg {
      */
     int getAuthType();
 
-    // optional string auth_ip = 10;
     /**
      * <code>optional string auth_ip = 10;</code>
      *
@@ -234,7 +225,7 @@ public final class QAppMsg {
      *调用方ip
      * </pre>
      */
-    String getAuthIp();
+    java.lang.String getAuthIp();
     /**
      * <code>optional string auth_ip = 10;</code>
      *
@@ -245,7 +236,6 @@ public final class QAppMsg {
     com.google.protobuf.ByteString
         getAuthIpBytes();
 
-    // optional uint64 auth_appid = 11;
     /**
      * <code>optional uint64 auth_appid = 11;</code>
      *
@@ -263,7 +253,6 @@ public final class QAppMsg {
      */
     long getAuthAppid();
 
-    // optional uint64 uid = 12;
     /**
      * <code>optional uint64 uid = 12;</code>
      *
@@ -281,7 +270,6 @@ public final class QAppMsg {
      */
     long getUid();
 
-    // optional bytes body = 13;
     /**
      * <code>optional bytes body = 13;</code>
      *
@@ -300,43 +288,47 @@ public final class QAppMsg {
     com.google.protobuf.ByteString getBody();
   }
   /**
-   * Protobuf type {@code com.tencent.dolphin.svrcore.qapp.QAppRequest}
+   * Protobuf type {@code QAppRequest}
    *
    * <pre>
+   *package tencent.im.qapp;
    *应用部&#92;应用平台中心内部通信包协议
    *二进制格式：0x2+htonl(整个包长(4字节))+QAppRequest/QAppResponse+0x3
    * </pre>
    */
-  public static final class QAppRequest extends
-      com.google.protobuf.GeneratedMessage
-      implements QAppRequestOrBuilder {
+  public  static final class QAppRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:QAppRequest)
+      QAppRequestOrBuilder {
     // Use QAppRequest.newBuilder() to construct.
     private QAppRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
-      this.unknownFields = builder.getUnknownFields();
     }
-    private QAppRequest(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final QAppRequest defaultInstance;
-    public static QAppRequest getDefaultInstance() {
-      return defaultInstance;
+    private QAppRequest() {
+      version_ = 0;
+      appName_ = "";
+      cmd_ = "";
+      seq_ = 0L;
+      clientIp_ = "";
+      serviceIp_ = "";
+      business_ = "";
+      authKey_ = com.google.protobuf.ByteString.EMPTY;
+      authType_ = 0;
+      authIp_ = "";
+      authAppid_ = 0L;
+      uid_ = 0L;
+      body_ = com.google.protobuf.ByteString.EMPTY;
     }
 
-    public QAppRequest getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
+    getUnknownFields() {
       return this.unknownFields;
     }
     private QAppRequest(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) {
+      this();
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -361,13 +353,15 @@ public final class QAppMsg {
               break;
             }
             case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              appName_ = input.readBytes();
+              appName_ = bs;
               break;
             }
             case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
-              cmd_ = input.readBytes();
+              cmd_ = bs;
               break;
             }
             case 32: {
@@ -376,18 +370,21 @@ public final class QAppMsg {
               break;
             }
             case 42: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000010;
-              clientIp_ = input.readBytes();
+              clientIp_ = bs;
               break;
             }
             case 50: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000020;
-              serviceIp_ = input.readBytes();
+              serviceIp_ = bs;
               break;
             }
             case 58: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000040;
-              business_ = input.readBytes();
+              business_ = bs;
               break;
             }
             case 66: {
@@ -401,8 +398,9 @@ public final class QAppMsg {
               break;
             }
             case 82: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000200;
-              authIp_ = input.readBytes();
+              authIp_ = bs;
               break;
             }
             case 88: {
@@ -423,10 +421,11 @@ public final class QAppMsg {
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
+        throw new RuntimeException(e.setUnfinishedMessage(this));
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
+        throw new RuntimeException(
+            new com.google.protobuf.InvalidProtocolBufferException(
+                e.getMessage()).setUnfinishedMessage(this));
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -434,33 +433,17 @@ public final class QAppMsg {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return QAppMsg.internal_static_com_tencent_jungle_svrcore_qapp_QAppRequest_descriptor;
+      return com.tencent.dolphin.svrcore.qapp.QAppMsg.internal_static_QAppRequest_descriptor;
     }
 
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return QAppMsg.internal_static_com_tencent_jungle_svrcore_qapp_QAppRequest_fieldAccessorTable
+      return com.tencent.dolphin.svrcore.qapp.QAppMsg.internal_static_QAppRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              QAppRequest.class, Builder.class);
-    }
-
-    public static com.google.protobuf.Parser<QAppRequest> PARSER =
-        new com.google.protobuf.AbstractParser<QAppRequest>() {
-      public QAppRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new QAppRequest(input, extensionRegistry);
-      }
-    };
-
-    @Override
-    public com.google.protobuf.Parser<QAppRequest> getParserForType() {
-      return PARSER;
+              com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppRequest.class, com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppRequest.Builder.class);
     }
 
     private int bitField0_;
-    // optional uint32 version = 1;
     public static final int VERSION_FIELD_NUMBER = 1;
     private int version_;
     /**
@@ -484,9 +467,8 @@ public final class QAppMsg {
       return version_;
     }
 
-    // optional string app_name = 2;
     public static final int APP_NAME_FIELD_NUMBER = 2;
-    private Object appName_;
+    private volatile java.lang.Object appName_;
     /**
      * <code>optional string app_name = 2;</code>
      *
@@ -504,14 +486,14 @@ public final class QAppMsg {
      *业务名称
      * </pre>
      */
-    public String getAppName() {
-      Object ref = appName_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getAppName() {
+      java.lang.Object ref = appName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           appName_ = s;
         }
@@ -527,11 +509,11 @@ public final class QAppMsg {
      */
     public com.google.protobuf.ByteString
         getAppNameBytes() {
-      Object ref = appName_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
+      java.lang.Object ref = appName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         appName_ = b;
         return b;
       } else {
@@ -539,9 +521,8 @@ public final class QAppMsg {
       }
     }
 
-    // optional string cmd = 3;
     public static final int CMD_FIELD_NUMBER = 3;
-    private Object cmd_;
+    private volatile java.lang.Object cmd_;
     /**
      * <code>optional string cmd = 3;</code>
      *
@@ -559,14 +540,14 @@ public final class QAppMsg {
      *请求命令字
      * </pre>
      */
-    public String getCmd() {
-      Object ref = cmd_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getCmd() {
+      java.lang.Object ref = cmd_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           cmd_ = s;
         }
@@ -582,11 +563,11 @@ public final class QAppMsg {
      */
     public com.google.protobuf.ByteString
         getCmdBytes() {
-      Object ref = cmd_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
+      java.lang.Object ref = cmd_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         cmd_ = b;
         return b;
       } else {
@@ -594,14 +575,13 @@ public final class QAppMsg {
       }
     }
 
-    // optional uint64 seq = 4;
     public static final int SEQ_FIELD_NUMBER = 4;
     private long seq_;
     /**
      * <code>optional uint64 seq = 4;</code>
      *
      * <pre>
-     *请求序列号
+     *请求序列号    
      * </pre>
      */
     public boolean hasSeq() {
@@ -611,16 +591,15 @@ public final class QAppMsg {
      * <code>optional uint64 seq = 4;</code>
      *
      * <pre>
-     *请求序列号
+     *请求序列号    
      * </pre>
      */
     public long getSeq() {
       return seq_;
     }
 
-    // optional string client_ip = 5;
     public static final int CLIENT_IP_FIELD_NUMBER = 5;
-    private Object clientIp_;
+    private volatile java.lang.Object clientIp_;
     /**
      * <code>optional string client_ip = 5;</code>
      *
@@ -638,14 +617,14 @@ public final class QAppMsg {
      *客户端ip
      * </pre>
      */
-    public String getClientIp() {
-      Object ref = clientIp_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getClientIp() {
+      java.lang.Object ref = clientIp_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           clientIp_ = s;
         }
@@ -661,11 +640,11 @@ public final class QAppMsg {
      */
     public com.google.protobuf.ByteString
         getClientIpBytes() {
-      Object ref = clientIp_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
+      java.lang.Object ref = clientIp_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         clientIp_ = b;
         return b;
       } else {
@@ -673,9 +652,8 @@ public final class QAppMsg {
       }
     }
 
-    // optional string service_ip = 6;
     public static final int SERVICE_IP_FIELD_NUMBER = 6;
-    private Object serviceIp_;
+    private volatile java.lang.Object serviceIp_;
     /**
      * <code>optional string service_ip = 6;</code>
      *
@@ -693,14 +671,14 @@ public final class QAppMsg {
      *服务端ip
      * </pre>
      */
-    public String getServiceIp() {
-      Object ref = serviceIp_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getServiceIp() {
+      java.lang.Object ref = serviceIp_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           serviceIp_ = s;
         }
@@ -716,11 +694,11 @@ public final class QAppMsg {
      */
     public com.google.protobuf.ByteString
         getServiceIpBytes() {
-      Object ref = serviceIp_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
+      java.lang.Object ref = serviceIp_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         serviceIp_ = b;
         return b;
       } else {
@@ -728,9 +706,8 @@ public final class QAppMsg {
       }
     }
 
-    // optional string business = 7;
     public static final int BUSINESS_FIELD_NUMBER = 7;
-    private Object business_;
+    private volatile java.lang.Object business_;
     /**
      * <code>optional string business = 7;</code>
      *
@@ -748,14 +725,14 @@ public final class QAppMsg {
      *调用方
      * </pre>
      */
-    public String getBusiness() {
-      Object ref = business_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getBusiness() {
+      java.lang.Object ref = business_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           business_ = s;
         }
@@ -771,11 +748,11 @@ public final class QAppMsg {
      */
     public com.google.protobuf.ByteString
         getBusinessBytes() {
-      Object ref = business_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
+      java.lang.Object ref = business_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         business_ = b;
         return b;
       } else {
@@ -783,7 +760,6 @@ public final class QAppMsg {
       }
     }
 
-    // optional bytes auth_key = 8;
     public static final int AUTH_KEY_FIELD_NUMBER = 8;
     private com.google.protobuf.ByteString authKey_;
     /**
@@ -807,7 +783,6 @@ public final class QAppMsg {
       return authKey_;
     }
 
-    // optional uint32 auth_type = 9;
     public static final int AUTH_TYPE_FIELD_NUMBER = 9;
     private int authType_;
     /**
@@ -831,9 +806,8 @@ public final class QAppMsg {
       return authType_;
     }
 
-    // optional string auth_ip = 10;
     public static final int AUTH_IP_FIELD_NUMBER = 10;
-    private Object authIp_;
+    private volatile java.lang.Object authIp_;
     /**
      * <code>optional string auth_ip = 10;</code>
      *
@@ -851,14 +825,14 @@ public final class QAppMsg {
      *调用方ip
      * </pre>
      */
-    public String getAuthIp() {
-      Object ref = authIp_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getAuthIp() {
+      java.lang.Object ref = authIp_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           authIp_ = s;
         }
@@ -874,11 +848,11 @@ public final class QAppMsg {
      */
     public com.google.protobuf.ByteString
         getAuthIpBytes() {
-      Object ref = authIp_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
+      java.lang.Object ref = authIp_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         authIp_ = b;
         return b;
       } else {
@@ -886,7 +860,6 @@ public final class QAppMsg {
       }
     }
 
-    // optional uint64 auth_appid = 11;
     public static final int AUTH_APPID_FIELD_NUMBER = 11;
     private long authAppid_;
     /**
@@ -910,7 +883,6 @@ public final class QAppMsg {
       return authAppid_;
     }
 
-    // optional uint64 uid = 12;
     public static final int UID_FIELD_NUMBER = 12;
     private long uid_;
     /**
@@ -934,7 +906,6 @@ public final class QAppMsg {
       return uid_;
     }
 
-    // optional bytes body = 13;
     public static final int BODY_FIELD_NUMBER = 13;
     private com.google.protobuf.ByteString body_;
     /**
@@ -958,25 +929,11 @@ public final class QAppMsg {
       return body_;
     }
 
-    private void initFields() {
-      version_ = 0;
-      appName_ = "";
-      cmd_ = "";
-      seq_ = 0L;
-      clientIp_ = "";
-      serviceIp_ = "";
-      business_ = "";
-      authKey_ = com.google.protobuf.ByteString.EMPTY;
-      authType_ = 0;
-      authIp_ = "";
-      authAppid_ = 0L;
-      uid_ = 0L;
-      body_ = com.google.protobuf.ByteString.EMPTY;
-    }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
       return true;
@@ -984,27 +941,26 @@ public final class QAppMsg {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeUInt32(1, version_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getAppNameBytes());
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, appName_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getCmdBytes());
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, cmd_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeUInt64(4, seq_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeBytes(5, getClientIpBytes());
+        com.google.protobuf.GeneratedMessage.writeString(output, 5, clientIp_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeBytes(6, getServiceIpBytes());
+        com.google.protobuf.GeneratedMessage.writeString(output, 6, serviceIp_);
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        output.writeBytes(7, getBusinessBytes());
+        com.google.protobuf.GeneratedMessage.writeString(output, 7, business_);
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
         output.writeBytes(8, authKey_);
@@ -1013,7 +969,7 @@ public final class QAppMsg {
         output.writeUInt32(9, authType_);
       }
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
-        output.writeBytes(10, getAuthIpBytes());
+        com.google.protobuf.GeneratedMessage.writeString(output, 10, authIp_);
       }
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
         output.writeUInt64(11, authAppid_);
@@ -1024,12 +980,11 @@ public final class QAppMsg {
       if (((bitField0_ & 0x00001000) == 0x00001000)) {
         output.writeBytes(13, body_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
-    private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -1038,28 +993,23 @@ public final class QAppMsg {
           .computeUInt32Size(1, version_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getAppNameBytes());
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, appName_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getCmdBytes());
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, cmd_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(4, seq_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(5, getClientIpBytes());
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(5, clientIp_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(6, getServiceIpBytes());
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(6, serviceIp_);
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(7, getBusinessBytes());
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(7, business_);
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
@@ -1070,8 +1020,7 @@ public final class QAppMsg {
           .computeUInt32Size(9, authType_);
       }
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(10, getAuthIpBytes());
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(10, authIp_);
       }
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
         size += com.google.protobuf.CodedOutputStream
@@ -1085,105 +1034,106 @@ public final class QAppMsg {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(13, body_);
       }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
     private static final long serialVersionUID = 0L;
-    @Override
-    protected Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-
-    public static QAppRequest parseFrom(
+    public static com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static QAppRequest parseFrom(
+    public static com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static QAppRequest parseFrom(byte[] data)
+    public static com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static QAppRequest parseFrom(
+    public static com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static QAppRequest parseFrom(java.io.InputStream input)
+    public static com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static QAppRequest parseFrom(
+    public static com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static QAppRequest parseDelimitedFrom(java.io.InputStream input)
+    public static com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static QAppRequest parseDelimitedFrom(
+    public static com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static QAppRequest parseFrom(
+    public static com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static QAppRequest parseFrom(
+    public static com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(QAppRequest prototype) {
-      return newBuilder().mergeFrom(prototype);
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
     }
-    public Builder toBuilder() { return newBuilder(this); }
+    public static Builder newBuilder(com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
     /**
-     * Protobuf type {@code com.tencent.dolphin.svrcore.qapp.QAppRequest}
+     * Protobuf type {@code QAppRequest}
      *
      * <pre>
+     *package tencent.im.qapp;
      *应用部&#92;应用平台中心内部通信包协议
      *二进制格式：0x2+htonl(整个包长(4字节))+QAppRequest/QAppResponse+0x3
      * </pre>
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements QAppRequestOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:QAppRequest)
+        com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return QAppMsg.internal_static_com_tencent_jungle_svrcore_qapp_QAppRequest_descriptor;
+        return com.tencent.dolphin.svrcore.qapp.QAppMsg.internal_static_QAppRequest_descriptor;
       }
 
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return QAppMsg.internal_static_com_tencent_jungle_svrcore_qapp_QAppRequest_fieldAccessorTable
+        return com.tencent.dolphin.svrcore.qapp.QAppMsg.internal_static_QAppRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                QAppRequest.class, Builder.class);
+                com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppRequest.class, com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppRequest.Builder.class);
       }
 
       // Construct using com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppRequest.newBuilder()
@@ -1192,7 +1142,7 @@ public final class QAppMsg {
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -1200,10 +1150,6 @@ public final class QAppMsg {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         }
       }
-      private static Builder create() {
-        return new Builder();
-      }
-
       public Builder clear() {
         super.clear();
         version_ = 0;
@@ -1235,29 +1181,25 @@ public final class QAppMsg {
         return this;
       }
 
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return QAppMsg.internal_static_com_tencent_jungle_svrcore_qapp_QAppRequest_descriptor;
+        return com.tencent.dolphin.svrcore.qapp.QAppMsg.internal_static_QAppRequest_descriptor;
       }
 
-      public QAppRequest getDefaultInstanceForType() {
-        return QAppRequest.getDefaultInstance();
+      public com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppRequest getDefaultInstanceForType() {
+        return com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppRequest.getDefaultInstance();
       }
 
-      public QAppRequest build() {
-        QAppRequest result = buildPartial();
+      public com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppRequest build() {
+        com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public QAppRequest buildPartial() {
-        QAppRequest result = new QAppRequest(this);
+      public com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppRequest buildPartial() {
+        com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppRequest result = new com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppRequest(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -1318,16 +1260,16 @@ public final class QAppMsg {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof QAppRequest) {
-          return mergeFrom((QAppRequest)other);
+        if (other instanceof com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppRequest) {
+          return mergeFrom((com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(QAppRequest other) {
-        if (other == QAppRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppRequest other) {
+        if (other == com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppRequest.getDefaultInstance()) return this;
         if (other.hasVersion()) {
           setVersion(other.getVersion());
         }
@@ -1379,7 +1321,8 @@ public final class QAppMsg {
         if (other.hasBody()) {
           setBody(other.getBody());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
         return this;
       }
 
@@ -1391,11 +1334,11 @@ public final class QAppMsg {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        QAppRequest parsedMessage = null;
+        com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (QAppRequest) e.getUnfinishedMessage();
+          parsedMessage = (com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppRequest) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -1406,7 +1349,6 @@ public final class QAppMsg {
       }
       private int bitField0_;
 
-      // optional uint32 version = 1;
       private int version_ ;
       /**
        * <code>optional uint32 version = 1;</code>
@@ -1455,8 +1397,7 @@ public final class QAppMsg {
         return this;
       }
 
-      // optional string app_name = 2;
-      private Object appName_ = "";
+      private java.lang.Object appName_ = "";
       /**
        * <code>optional string app_name = 2;</code>
        *
@@ -1474,15 +1415,18 @@ public final class QAppMsg {
        *业务名称
        * </pre>
        */
-      public String getAppName() {
-        Object ref = appName_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          appName_ = s;
+      public java.lang.String getAppName() {
+        java.lang.Object ref = appName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            appName_ = s;
+          }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -1494,11 +1438,11 @@ public final class QAppMsg {
        */
       public com.google.protobuf.ByteString
           getAppNameBytes() {
-        Object ref = appName_;
+        java.lang.Object ref = appName_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           appName_ = b;
           return b;
         } else {
@@ -1513,7 +1457,7 @@ public final class QAppMsg {
        * </pre>
        */
       public Builder setAppName(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -1553,8 +1497,7 @@ public final class QAppMsg {
         return this;
       }
 
-      // optional string cmd = 3;
-      private Object cmd_ = "";
+      private java.lang.Object cmd_ = "";
       /**
        * <code>optional string cmd = 3;</code>
        *
@@ -1572,15 +1515,18 @@ public final class QAppMsg {
        *请求命令字
        * </pre>
        */
-      public String getCmd() {
-        Object ref = cmd_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          cmd_ = s;
+      public java.lang.String getCmd() {
+        java.lang.Object ref = cmd_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            cmd_ = s;
+          }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -1592,11 +1538,11 @@ public final class QAppMsg {
        */
       public com.google.protobuf.ByteString
           getCmdBytes() {
-        Object ref = cmd_;
+        java.lang.Object ref = cmd_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           cmd_ = b;
           return b;
         } else {
@@ -1611,7 +1557,7 @@ public final class QAppMsg {
        * </pre>
        */
       public Builder setCmd(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -1651,13 +1597,12 @@ public final class QAppMsg {
         return this;
       }
 
-      // optional uint64 seq = 4;
       private long seq_ ;
       /**
        * <code>optional uint64 seq = 4;</code>
        *
        * <pre>
-       *请求序列号
+       *请求序列号    
        * </pre>
        */
       public boolean hasSeq() {
@@ -1667,7 +1612,7 @@ public final class QAppMsg {
        * <code>optional uint64 seq = 4;</code>
        *
        * <pre>
-       *请求序列号
+       *请求序列号    
        * </pre>
        */
       public long getSeq() {
@@ -1677,7 +1622,7 @@ public final class QAppMsg {
        * <code>optional uint64 seq = 4;</code>
        *
        * <pre>
-       *请求序列号
+       *请求序列号    
        * </pre>
        */
       public Builder setSeq(long value) {
@@ -1690,7 +1635,7 @@ public final class QAppMsg {
        * <code>optional uint64 seq = 4;</code>
        *
        * <pre>
-       *请求序列号
+       *请求序列号    
        * </pre>
        */
       public Builder clearSeq() {
@@ -1700,8 +1645,7 @@ public final class QAppMsg {
         return this;
       }
 
-      // optional string client_ip = 5;
-      private Object clientIp_ = "";
+      private java.lang.Object clientIp_ = "";
       /**
        * <code>optional string client_ip = 5;</code>
        *
@@ -1719,15 +1663,18 @@ public final class QAppMsg {
        *客户端ip
        * </pre>
        */
-      public String getClientIp() {
-        Object ref = clientIp_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          clientIp_ = s;
+      public java.lang.String getClientIp() {
+        java.lang.Object ref = clientIp_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            clientIp_ = s;
+          }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -1739,11 +1686,11 @@ public final class QAppMsg {
        */
       public com.google.protobuf.ByteString
           getClientIpBytes() {
-        Object ref = clientIp_;
+        java.lang.Object ref = clientIp_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           clientIp_ = b;
           return b;
         } else {
@@ -1758,7 +1705,7 @@ public final class QAppMsg {
        * </pre>
        */
       public Builder setClientIp(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -1798,8 +1745,7 @@ public final class QAppMsg {
         return this;
       }
 
-      // optional string service_ip = 6;
-      private Object serviceIp_ = "";
+      private java.lang.Object serviceIp_ = "";
       /**
        * <code>optional string service_ip = 6;</code>
        *
@@ -1817,15 +1763,18 @@ public final class QAppMsg {
        *服务端ip
        * </pre>
        */
-      public String getServiceIp() {
-        Object ref = serviceIp_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          serviceIp_ = s;
+      public java.lang.String getServiceIp() {
+        java.lang.Object ref = serviceIp_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            serviceIp_ = s;
+          }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -1837,11 +1786,11 @@ public final class QAppMsg {
        */
       public com.google.protobuf.ByteString
           getServiceIpBytes() {
-        Object ref = serviceIp_;
+        java.lang.Object ref = serviceIp_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           serviceIp_ = b;
           return b;
         } else {
@@ -1856,7 +1805,7 @@ public final class QAppMsg {
        * </pre>
        */
       public Builder setServiceIp(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -1896,8 +1845,7 @@ public final class QAppMsg {
         return this;
       }
 
-      // optional string business = 7;
-      private Object business_ = "";
+      private java.lang.Object business_ = "";
       /**
        * <code>optional string business = 7;</code>
        *
@@ -1915,15 +1863,18 @@ public final class QAppMsg {
        *调用方
        * </pre>
        */
-      public String getBusiness() {
-        Object ref = business_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          business_ = s;
+      public java.lang.String getBusiness() {
+        java.lang.Object ref = business_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            business_ = s;
+          }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -1935,11 +1886,11 @@ public final class QAppMsg {
        */
       public com.google.protobuf.ByteString
           getBusinessBytes() {
-        Object ref = business_;
+        java.lang.Object ref = business_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           business_ = b;
           return b;
         } else {
@@ -1954,7 +1905,7 @@ public final class QAppMsg {
        * </pre>
        */
       public Builder setBusiness(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -1994,7 +1945,6 @@ public final class QAppMsg {
         return this;
       }
 
-      // optional bytes auth_key = 8;
       private com.google.protobuf.ByteString authKey_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes auth_key = 8;</code>
@@ -2046,7 +1996,6 @@ public final class QAppMsg {
         return this;
       }
 
-      // optional uint32 auth_type = 9;
       private int authType_ ;
       /**
        * <code>optional uint32 auth_type = 9;</code>
@@ -2095,8 +2044,7 @@ public final class QAppMsg {
         return this;
       }
 
-      // optional string auth_ip = 10;
-      private Object authIp_ = "";
+      private java.lang.Object authIp_ = "";
       /**
        * <code>optional string auth_ip = 10;</code>
        *
@@ -2114,15 +2062,18 @@ public final class QAppMsg {
        *调用方ip
        * </pre>
        */
-      public String getAuthIp() {
-        Object ref = authIp_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          authIp_ = s;
+      public java.lang.String getAuthIp() {
+        java.lang.Object ref = authIp_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            authIp_ = s;
+          }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -2134,11 +2085,11 @@ public final class QAppMsg {
        */
       public com.google.protobuf.ByteString
           getAuthIpBytes() {
-        Object ref = authIp_;
+        java.lang.Object ref = authIp_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           authIp_ = b;
           return b;
         } else {
@@ -2153,7 +2104,7 @@ public final class QAppMsg {
        * </pre>
        */
       public Builder setAuthIp(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -2193,7 +2144,6 @@ public final class QAppMsg {
         return this;
       }
 
-      // optional uint64 auth_appid = 11;
       private long authAppid_ ;
       /**
        * <code>optional uint64 auth_appid = 11;</code>
@@ -2242,7 +2192,6 @@ public final class QAppMsg {
         return this;
       }
 
-      // optional uint64 uid = 12;
       private long uid_ ;
       /**
        * <code>optional uint64 uid = 12;</code>
@@ -2291,7 +2240,6 @@ public final class QAppMsg {
         return this;
       }
 
-      // optional bytes body = 13;
       private com.google.protobuf.ByteString body_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes body = 13;</code>
@@ -2343,21 +2291,57 @@ public final class QAppMsg {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:com.tencent.dolphin.svrcore.qapp.QAppRequest)
+      // @@protoc_insertion_point(builder_scope:QAppRequest)
     }
 
+    // @@protoc_insertion_point(class_scope:QAppRequest)
+    private static final com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppRequest DEFAULT_INSTANCE;
     static {
-      defaultInstance = new QAppRequest(true);
-      defaultInstance.initFields();
+      DEFAULT_INSTANCE = new com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppRequest();
     }
 
-    // @@protoc_insertion_point(class_scope:com.tencent.dolphin.svrcore.qapp.QAppRequest)
+    public static com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<QAppRequest>
+        PARSER = new com.google.protobuf.AbstractParser<QAppRequest>() {
+      public QAppRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        try {
+          return new QAppRequest(input, extensionRegistry);
+        } catch (RuntimeException e) {
+          if (e.getCause() instanceof
+              com.google.protobuf.InvalidProtocolBufferException) {
+            throw (com.google.protobuf.InvalidProtocolBufferException)
+                e.getCause();
+          }
+          throw e;
+        }
+      }
+    };
+
+    public static com.google.protobuf.Parser<QAppRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QAppRequest> getParserForType() {
+      return PARSER;
+    }
+
+    public com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
-  public interface QAppResponseOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface QAppResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:QAppResponse)
+      com.google.protobuf.MessageOrBuilder {
 
-    // optional uint64 seq = 1;
     /**
      * <code>optional uint64 seq = 1;</code>
      *
@@ -2375,7 +2359,6 @@ public final class QAppMsg {
      */
     long getSeq();
 
-    // optional uint32 err_code = 2;
     /**
      * <code>optional uint32 err_code = 2;</code>
      *
@@ -2393,7 +2376,6 @@ public final class QAppMsg {
      */
     int getErrCode();
 
-    // optional string err_msg = 3;
     /**
      * <code>optional string err_msg = 3;</code>
      *
@@ -2409,7 +2391,7 @@ public final class QAppMsg {
      *错误信息
      * </pre>
      */
-    String getErrMsg();
+    java.lang.String getErrMsg();
     /**
      * <code>optional string err_msg = 3;</code>
      *
@@ -2420,7 +2402,6 @@ public final class QAppMsg {
     com.google.protobuf.ByteString
         getErrMsgBytes();
 
-    // optional bytes body = 4;
     /**
      * <code>optional bytes body = 4;</code>
      *
@@ -2439,38 +2420,32 @@ public final class QAppMsg {
     com.google.protobuf.ByteString getBody();
   }
   /**
-   * Protobuf type {@code com.tencent.dolphin.svrcore.qapp.QAppResponse}
+   * Protobuf type {@code QAppResponse}
    */
-  public static final class QAppResponse extends
-      com.google.protobuf.GeneratedMessage
-      implements QAppResponseOrBuilder {
+  public  static final class QAppResponse extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:QAppResponse)
+      QAppResponseOrBuilder {
     // Use QAppResponse.newBuilder() to construct.
     private QAppResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
-      this.unknownFields = builder.getUnknownFields();
     }
-    private QAppResponse(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final QAppResponse defaultInstance;
-    public static QAppResponse getDefaultInstance() {
-      return defaultInstance;
-    }
-
-    public QAppResponse getDefaultInstanceForType() {
-      return defaultInstance;
+    private QAppResponse() {
+      seq_ = 0L;
+      errCode_ = 0;
+      errMsg_ = "";
+      body_ = com.google.protobuf.ByteString.EMPTY;
     }
 
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
+    getUnknownFields() {
       return this.unknownFields;
     }
     private QAppResponse(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) {
+      this();
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -2500,8 +2475,9 @@ public final class QAppMsg {
               break;
             }
             case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
-              errMsg_ = input.readBytes();
+              errMsg_ = bs;
               break;
             }
             case 34: {
@@ -2512,10 +2488,11 @@ public final class QAppMsg {
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
+        throw new RuntimeException(e.setUnfinishedMessage(this));
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
+        throw new RuntimeException(
+            new com.google.protobuf.InvalidProtocolBufferException(
+                e.getMessage()).setUnfinishedMessage(this));
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -2523,33 +2500,17 @@ public final class QAppMsg {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return QAppMsg.internal_static_com_tencent_jungle_svrcore_qapp_QAppResponse_descriptor;
+      return com.tencent.dolphin.svrcore.qapp.QAppMsg.internal_static_QAppResponse_descriptor;
     }
 
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return QAppMsg.internal_static_com_tencent_jungle_svrcore_qapp_QAppResponse_fieldAccessorTable
+      return com.tencent.dolphin.svrcore.qapp.QAppMsg.internal_static_QAppResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              QAppResponse.class, Builder.class);
-    }
-
-    public static com.google.protobuf.Parser<QAppResponse> PARSER =
-        new com.google.protobuf.AbstractParser<QAppResponse>() {
-      public QAppResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new QAppResponse(input, extensionRegistry);
-      }
-    };
-
-    @Override
-    public com.google.protobuf.Parser<QAppResponse> getParserForType() {
-      return PARSER;
+              com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppResponse.class, com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppResponse.Builder.class);
     }
 
     private int bitField0_;
-    // optional uint64 seq = 1;
     public static final int SEQ_FIELD_NUMBER = 1;
     private long seq_;
     /**
@@ -2573,7 +2534,6 @@ public final class QAppMsg {
       return seq_;
     }
 
-    // optional uint32 err_code = 2;
     public static final int ERR_CODE_FIELD_NUMBER = 2;
     private int errCode_;
     /**
@@ -2597,9 +2557,8 @@ public final class QAppMsg {
       return errCode_;
     }
 
-    // optional string err_msg = 3;
     public static final int ERR_MSG_FIELD_NUMBER = 3;
-    private Object errMsg_;
+    private volatile java.lang.Object errMsg_;
     /**
      * <code>optional string err_msg = 3;</code>
      *
@@ -2617,14 +2576,14 @@ public final class QAppMsg {
      *错误信息
      * </pre>
      */
-    public String getErrMsg() {
-      Object ref = errMsg_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getErrMsg() {
+      java.lang.Object ref = errMsg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           errMsg_ = s;
         }
@@ -2640,11 +2599,11 @@ public final class QAppMsg {
      */
     public com.google.protobuf.ByteString
         getErrMsgBytes() {
-      Object ref = errMsg_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
+      java.lang.Object ref = errMsg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         errMsg_ = b;
         return b;
       } else {
@@ -2652,7 +2611,6 @@ public final class QAppMsg {
       }
     }
 
-    // optional bytes body = 4;
     public static final int BODY_FIELD_NUMBER = 4;
     private com.google.protobuf.ByteString body_;
     /**
@@ -2676,16 +2634,11 @@ public final class QAppMsg {
       return body_;
     }
 
-    private void initFields() {
-      seq_ = 0L;
-      errCode_ = 0;
-      errMsg_ = "";
-      body_ = com.google.protobuf.ByteString.EMPTY;
-    }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
       return true;
@@ -2693,7 +2646,6 @@ public final class QAppMsg {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeUInt64(1, seq_);
       }
@@ -2701,17 +2653,16 @@ public final class QAppMsg {
         output.writeUInt32(2, errCode_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getErrMsgBytes());
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, errMsg_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeBytes(4, body_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
-    private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -2724,107 +2675,106 @@ public final class QAppMsg {
           .computeUInt32Size(2, errCode_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getErrMsgBytes());
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, errMsg_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(4, body_);
       }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
     private static final long serialVersionUID = 0L;
-    @Override
-    protected Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-
-    public static QAppResponse parseFrom(
+    public static com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static QAppResponse parseFrom(
+    public static com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static QAppResponse parseFrom(byte[] data)
+    public static com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static QAppResponse parseFrom(
+    public static com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static QAppResponse parseFrom(java.io.InputStream input)
+    public static com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static QAppResponse parseFrom(
+    public static com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static QAppResponse parseDelimitedFrom(java.io.InputStream input)
+    public static com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static QAppResponse parseDelimitedFrom(
+    public static com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static QAppResponse parseFrom(
+    public static com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static QAppResponse parseFrom(
+    public static com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(QAppResponse prototype) {
-      return newBuilder().mergeFrom(prototype);
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
     }
-    public Builder toBuilder() { return newBuilder(this); }
+    public static Builder newBuilder(com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
     /**
-     * Protobuf type {@code com.tencent.dolphin.svrcore.qapp.QAppResponse}
+     * Protobuf type {@code QAppResponse}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements QAppResponseOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:QAppResponse)
+        com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return QAppMsg.internal_static_com_tencent_jungle_svrcore_qapp_QAppResponse_descriptor;
+        return com.tencent.dolphin.svrcore.qapp.QAppMsg.internal_static_QAppResponse_descriptor;
       }
 
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return QAppMsg.internal_static_com_tencent_jungle_svrcore_qapp_QAppResponse_fieldAccessorTable
+        return com.tencent.dolphin.svrcore.qapp.QAppMsg.internal_static_QAppResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                QAppResponse.class, Builder.class);
+                com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppResponse.class, com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppResponse.Builder.class);
       }
 
       // Construct using com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppResponse.newBuilder()
@@ -2833,7 +2783,7 @@ public final class QAppMsg {
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -2841,10 +2791,6 @@ public final class QAppMsg {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         }
       }
-      private static Builder create() {
-        return new Builder();
-      }
-
       public Builder clear() {
         super.clear();
         seq_ = 0L;
@@ -2858,29 +2804,25 @@ public final class QAppMsg {
         return this;
       }
 
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return QAppMsg.internal_static_com_tencent_jungle_svrcore_qapp_QAppResponse_descriptor;
+        return com.tencent.dolphin.svrcore.qapp.QAppMsg.internal_static_QAppResponse_descriptor;
       }
 
-      public QAppResponse getDefaultInstanceForType() {
-        return QAppResponse.getDefaultInstance();
+      public com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppResponse getDefaultInstanceForType() {
+        return com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppResponse.getDefaultInstance();
       }
 
-      public QAppResponse build() {
-        QAppResponse result = buildPartial();
+      public com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppResponse build() {
+        com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public QAppResponse buildPartial() {
-        QAppResponse result = new QAppResponse(this);
+      public com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppResponse buildPartial() {
+        com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppResponse result = new com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppResponse(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -2905,16 +2847,16 @@ public final class QAppMsg {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof QAppResponse) {
-          return mergeFrom((QAppResponse)other);
+        if (other instanceof com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppResponse) {
+          return mergeFrom((com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(QAppResponse other) {
-        if (other == QAppResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppResponse other) {
+        if (other == com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppResponse.getDefaultInstance()) return this;
         if (other.hasSeq()) {
           setSeq(other.getSeq());
         }
@@ -2929,7 +2871,8 @@ public final class QAppMsg {
         if (other.hasBody()) {
           setBody(other.getBody());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
         return this;
       }
 
@@ -2941,11 +2884,11 @@ public final class QAppMsg {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        QAppResponse parsedMessage = null;
+        com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (QAppResponse) e.getUnfinishedMessage();
+          parsedMessage = (com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppResponse) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -2956,7 +2899,6 @@ public final class QAppMsg {
       }
       private int bitField0_;
 
-      // optional uint64 seq = 1;
       private long seq_ ;
       /**
        * <code>optional uint64 seq = 1;</code>
@@ -3005,7 +2947,6 @@ public final class QAppMsg {
         return this;
       }
 
-      // optional uint32 err_code = 2;
       private int errCode_ ;
       /**
        * <code>optional uint32 err_code = 2;</code>
@@ -3054,8 +2995,7 @@ public final class QAppMsg {
         return this;
       }
 
-      // optional string err_msg = 3;
-      private Object errMsg_ = "";
+      private java.lang.Object errMsg_ = "";
       /**
        * <code>optional string err_msg = 3;</code>
        *
@@ -3073,15 +3013,18 @@ public final class QAppMsg {
        *错误信息
        * </pre>
        */
-      public String getErrMsg() {
-        Object ref = errMsg_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          errMsg_ = s;
+      public java.lang.String getErrMsg() {
+        java.lang.Object ref = errMsg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            errMsg_ = s;
+          }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -3093,11 +3036,11 @@ public final class QAppMsg {
        */
       public com.google.protobuf.ByteString
           getErrMsgBytes() {
-        Object ref = errMsg_;
+        java.lang.Object ref = errMsg_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           errMsg_ = b;
           return b;
         } else {
@@ -3112,7 +3055,7 @@ public final class QAppMsg {
        * </pre>
        */
       public Builder setErrMsg(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -3152,7 +3095,6 @@ public final class QAppMsg {
         return this;
       }
 
-      // optional bytes body = 4;
       private com.google.protobuf.ByteString body_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes body = 4;</code>
@@ -3204,27 +3146,63 @@ public final class QAppMsg {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:com.tencent.dolphin.svrcore.qapp.QAppResponse)
+      // @@protoc_insertion_point(builder_scope:QAppResponse)
     }
 
+    // @@protoc_insertion_point(class_scope:QAppResponse)
+    private static final com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppResponse DEFAULT_INSTANCE;
     static {
-      defaultInstance = new QAppResponse(true);
-      defaultInstance.initFields();
+      DEFAULT_INSTANCE = new com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppResponse();
     }
 
-    // @@protoc_insertion_point(class_scope:com.tencent.dolphin.svrcore.qapp.QAppResponse)
+    public static com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<QAppResponse>
+        PARSER = new com.google.protobuf.AbstractParser<QAppResponse>() {
+      public QAppResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        try {
+          return new QAppResponse(input, extensionRegistry);
+        } catch (RuntimeException e) {
+          if (e.getCause() instanceof
+              com.google.protobuf.InvalidProtocolBufferException) {
+            throw (com.google.protobuf.InvalidProtocolBufferException)
+                e.getCause();
+          }
+          throw e;
+        }
+      }
+    };
+
+    public static com.google.protobuf.Parser<QAppResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QAppResponse> getParserForType() {
+      return PARSER;
+    }
+
+    public com.tencent.dolphin.svrcore.qapp.QAppMsg.QAppResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_tencent_jungle_svrcore_qapp_QAppRequest_descriptor;
+    internal_static_QAppRequest_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_tencent_jungle_svrcore_qapp_QAppRequest_fieldAccessorTable;
+      internal_static_QAppRequest_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_tencent_jungle_svrcore_qapp_QAppResponse_descriptor;
+    internal_static_QAppResponse_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_tencent_jungle_svrcore_qapp_QAppResponse_fieldAccessorTable;
+      internal_static_QAppResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -3233,42 +3211,42 @@ public final class QAppMsg {
   private static com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    String[] descriptorData = {
-      "\n\022qapp_package.proto\022\037com.tencent.dolphin" +
-      ".svrcore.qapp\"\350\001\n\013QAppRequest\022\017\n\007version" +
-      "\030\001 \001(\r\022\020\n\010app_name\030\002 \001(\t\022\013\n\003cmd\030\003 \001(\t\022\013\n" +
-      "\003seq\030\004 \001(\004\022\021\n\tclient_ip\030\005 \001(\t\022\022\n\nservice" +
-      "_ip\030\006 \001(\t\022\020\n\010business\030\007 \001(\t\022\020\n\010auth_key\030" +
-      "\010 \001(\014\022\021\n\tauth_type\030\t \001(\r\022\017\n\007auth_ip\030\n \001(" +
-      "\t\022\022\n\nauth_appid\030\013 \001(\004\022\013\n\003uid\030\014 \001(\004\022\014\n\004bo" +
-      "dy\030\r \001(\014\"L\n\014QAppResponse\022\013\n\003seq\030\001 \001(\004\022\020\n" +
-      "\010err_code\030\002 \001(\r\022\017\n\007err_msg\030\003 \001(\t\022\014\n\004body" +
-      "\030\004 \001(\014B\tB\007QAppMsg"
+    java.lang.String[] descriptorData = {
+      "\n\022qapp_package.proto\"\350\001\n\013QAppRequest\022\017\n\007" +
+      "version\030\001 \001(\r\022\020\n\010app_name\030\002 \001(\t\022\013\n\003cmd\030\003" +
+      " \001(\t\022\013\n\003seq\030\004 \001(\004\022\021\n\tclient_ip\030\005 \001(\t\022\022\n\n" +
+      "service_ip\030\006 \001(\t\022\020\n\010business\030\007 \001(\t\022\020\n\010au" +
+      "th_key\030\010 \001(\014\022\021\n\tauth_type\030\t \001(\r\022\017\n\007auth_" +
+      "ip\030\n \001(\t\022\022\n\nauth_appid\030\013 \001(\004\022\013\n\003uid\030\014 \001(" +
+      "\004\022\014\n\004body\030\r \001(\014\"L\n\014QAppResponse\022\013\n\003seq\030\001" +
+      " \001(\004\022\020\n\010err_code\030\002 \001(\r\022\017\n\007err_msg\030\003 \001(\t\022" +
+      "\014\n\004body\030\004 \001(\014B+\n com.tencent.dolphin.svr" +
+      "core.qappB\007QAppMsg"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-      new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-        public com.google.protobuf.ExtensionRegistry assignDescriptors(
-            com.google.protobuf.Descriptors.FileDescriptor root) {
-          descriptor = root;
-          internal_static_com_tencent_jungle_svrcore_qapp_QAppRequest_descriptor =
-            getDescriptor().getMessageTypes().get(0);
-          internal_static_com_tencent_jungle_svrcore_qapp_QAppRequest_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_com_tencent_jungle_svrcore_qapp_QAppRequest_descriptor,
-              new String[] { "Version", "AppName", "Cmd", "Seq", "ClientIp", "ServiceIp", "Business", "AuthKey", "AuthType", "AuthIp", "AuthAppid", "Uid", "Body", });
-          internal_static_com_tencent_jungle_svrcore_qapp_QAppResponse_descriptor =
-            getDescriptor().getMessageTypes().get(1);
-          internal_static_com_tencent_jungle_svrcore_qapp_QAppResponse_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_com_tencent_jungle_svrcore_qapp_QAppResponse_descriptor,
-              new String[] { "Seq", "ErrCode", "ErrMsg", "Body", });
-          return null;
-        }
-      };
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
+    internal_static_QAppRequest_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_QAppRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_QAppRequest_descriptor,
+        new java.lang.String[] { "Version", "AppName", "Cmd", "Seq", "ClientIp", "ServiceIp", "Business", "AuthKey", "AuthType", "AuthIp", "AuthAppid", "Uid", "Body", });
+    internal_static_QAppResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_QAppResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_QAppResponse_descriptor,
+        new java.lang.String[] { "Seq", "ErrCode", "ErrMsg", "Body", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

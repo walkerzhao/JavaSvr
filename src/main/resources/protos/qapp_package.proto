@@ -1,0 +1,32 @@
+syntax = "proto2";
+
+option java_package = "com.tencent.dolphin.svrcore.qapp";
+option java_outer_classname = "QAppMsg";
+
+//package tencent.im.qapp;
+//应用部\应用平台中心内部通信包协议
+//二进制格式：0x2+htonl(整个包长(4字节))+QAppRequest/QAppResponse+0x3
+message QAppRequest
+{
+    optional uint32 version = 1; //版本号
+    optional string  app_name = 2; //业务名称
+    optional string  cmd = 3; //请求命令字
+    optional uint64 seq = 4; //请求序列号    
+    optional string client_ip = 5; //客户端ip
+    optional string service_ip = 6; //服务端ip
+    optional string business = 7; //调用方
+    optional bytes auth_key = 8; //鉴权key
+    optional uint32 auth_type = 9; //鉴权类型
+    optional string auth_ip = 10; //调用方ip
+    optional uint64 auth_appid = 11;//appid
+    optional uint64 uid = 12; //用户唯一标示
+    optional bytes body = 13; //body
+};
+
+message QAppResponse
+{
+    optional uint64 seq = 1; //请求序列号
+    optional uint32 err_code = 2; //错误码
+    optional string err_msg = 3;  //错误信息
+    optional bytes body = 4; //body
+};

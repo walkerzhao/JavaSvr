@@ -77,12 +77,13 @@ public abstract class BaseServerIoService
 	@Override
 	protected void channelRead0(ChannelHandlerContext ctx, IoPacket msg)
 			throws Exception {
+		log.info("iocmd:{}", msg.getIoCmd());;
 		Processor<IoPacket, IoPacket> processor = mapper.map(ctx.channel(), msg);
 		if (processor == null){
-			MonitorUtils.monitor(2018809); // 未知命令丢弃
 			log.error(ctx.channel().remoteAddress() + " NO processor for " + msg.getIoCmd());
 			return;
 		}
+		log.info("processor:{}", processor);
 		
 		worker.dispatch(ctx.channel(), msg, processor);
 	}

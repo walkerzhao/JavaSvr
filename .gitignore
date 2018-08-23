@@ -49,3 +49,5 @@ target/classes/log4j2.xml
 
 JavaSvr.iml
 
+
+target/classes/jungle.properties

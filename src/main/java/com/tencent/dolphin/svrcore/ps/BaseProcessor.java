@@ -32,21 +32,7 @@ public abstract class BaseProcessor<T_REQ extends IoPacket, T_RSP extends IoPack
 	protected final Configuration configs;
 	protected final MonitorBlackUidUtil blackUidUtil;
 
-	
-	protected final int monitorAllReq;
-	protected final int monitorAllSucc;
-	protected final int monitorAllFail;
-	protected final int monitorAllTime200;
-	
-	protected final int monitorProjectReq;
-	protected final int monitorProjectSucc;
-	protected final int monitorProjectFail;
-	protected final int monitorProjectTime200;
-	
-	protected int monitorReq;
-	protected int monitorSucc;
-	protected int monitorFail;
-	protected int monitorTime200;
+
 
 	protected int processTimeOutValue;
 	protected int processTimeOutMonitor ;
@@ -62,10 +48,7 @@ public abstract class BaseProcessor<T_REQ extends IoPacket, T_RSP extends IoPack
 		} else {
 			cmd = String.valueOf(oCmd);
 		}
-		this.monitorReq = configs.getInt("monitor."+cmd+".req", 0);
-		this.monitorSucc = configs.getInt("monitor."+cmd+".succ", 0);
-		this.monitorFail = configs.getInt("monitor."+cmd+".fail", 0);
-		this.monitorTime200 = configs.getInt("monitor."+cmd+".time200", 0);
+
 	}
 
 	public void setServiceCmd(Object oCmd, int req, int succ, int fail, int timeoutV,int timeoutM) {
@@ -79,20 +62,7 @@ public abstract class BaseProcessor<T_REQ extends IoPacket, T_RSP extends IoPack
 		} else {
 			cmd = String.valueOf(oCmd);
 		}
-		if (req == 0 || succ == 0 || fail == 0 ) {
-			this.monitorReq = configs.getInt("monitor." + cmd + ".req", 0);
-			this.monitorSucc = configs.getInt("monitor." + cmd + ".succ", 0);
-			this.monitorFail = configs.getInt("monitor." + cmd + ".fail", 0);
-			this.monitorTime200 = configs.getInt("monitor." + cmd + ".time200", 0);
-		} else {
-			this.monitorReq = req;
-			this.monitorSucc = succ;
-			this.monitorFail = fail;
-			if (timeoutV > 10) {//这里设置一个最小值，方式误设置
-				this.processTimeOutValue = timeoutV;
-				this.processTimeOutMonitor = timeoutM;
-			}
-		}
+
 	}
 	
 	protected void MonitorReq(){}
@@ -109,16 +79,7 @@ public abstract class BaseProcessor<T_REQ extends IoPacket, T_RSP extends IoPack
 		
 		this.configs = injector.getInstance(Configuration.class);
 		this.blackUidUtil = injector.getInstance(MonitorBlackUidUtil.class);
-		
-		this.monitorAllReq = configs.getInt("monitor.req", 0);
-		this.monitorAllSucc = configs.getInt("monitor.succ", 0);
-		this.monitorAllFail = configs.getInt("monitor.fail", 0);
-		this.monitorAllTime200 = configs.getInt("monitor.time200", 0);
-		
-		this.monitorProjectReq = configs.getInt("monitor.project.req", 0);
-		this.monitorProjectSucc = configs.getInt("monitor.project.succ", 0);
-		this.monitorProjectFail = configs.getInt("monitor.project.fail", 0);
-		this.monitorProjectTime200 = configs.getInt("monitor.project.time200", 0);
+
 		
 		this.serverConfigs = injector.getInstance(ServerConfigs.class);
     }
@@ -130,29 +91,19 @@ public abstract class BaseProcessor<T_REQ extends IoPacket, T_RSP extends IoPack
 	/** 默认打本地日志
 	 * @throws */
 	protected void doFlowLog(T_REQ reqPkg, T_RSP rspPkg, Channel ioChannel, T_ATT attach, Exception ex, StringBuilder log) {
-		if(isWriteProcessor()){
-			kwriteFlow.info(log.toString());
-		}else{
-			kflow.info(log.toString());
-		}
+		logger.info("log flow log");
 	}
 	
 	@Override
 	public T_RSP process(T_REQ req, Channel ioChannel) throws Exception {
-		
-		MonitorUtils.monitor(monitorAllReq);
-		MonitorUtils.monitor(monitorProjectReq);
-		
-		 if (monitorReq !=0)
-			 MonitorUtils.monitor(monitorReq);
-		 else 
-			 MonitorReq();
+		logger.info("process begin");
 		 
 		T_ATT attach = null;
 		T_RSP rsp = null;
 		Exception caughtException = null;
 		try{
 			attach = beforeService(req, ioChannel);
+			logger.info("begin service.");
 			rsp = service(req, ioChannel, attach);
 		}
 		catch (Exception ex){
@@ -172,23 +123,11 @@ public abstract class BaseProcessor<T_REQ extends IoPacket, T_RSP extends IoPack
 			}
 			if(caughtException != null || rsp.getRetCode() !=0){
 				if(!blackUidUtil.isInBlack(req)){
-					MonitorUtils.monitor(monitorAllFail);
-					MonitorUtils.monitor(monitorProjectFail);
-					
-					if (monitorFail !=0)
-						MonitorUtils.monitor(monitorFail);
-					else 
-						MonitorFail();
+
 				}
 			}
 			else{
-				MonitorUtils.monitor(monitorAllSucc);
-				MonitorUtils.monitor(monitorProjectSucc);
-				
-				if (monitorSucc !=0)
-					MonitorUtils.monitor(monitorSucc);
-				else 
-					MonitorSucc();
+
 			}
 		}
 		catch (Exception ex3){
@@ -197,12 +136,7 @@ public abstract class BaseProcessor<T_REQ extends IoPacket, T_RSP extends IoPack
 		}finally{
 			long costTime = System.currentTimeMillis() - req.getCreateTime();
 			if(costTime > 200){
-				MonitorUtils.monitor(monitorAllTime200);
-				MonitorUtils.monitor(monitorProjectTime200);
-				if (monitorTime200 !=0)
-					MonitorUtils.monitor(monitorTime200);
-				else 
-					MonitorTime200();
+				logger.info("cost is > 200ms and report it.");
 			}
 
 			if (processTimeOutMonitor != 0 && costTime > processTimeOutValue) {//可以自定义每一个命令字的超时时间，而不是统一全部200
